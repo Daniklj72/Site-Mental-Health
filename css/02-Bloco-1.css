@@ -1,8 +1,16 @@
 /* -------------- BLOCO PRINCIPAL -------------- */
 
 .secao-principal {
+
     padding-top: 8rem;
-    background: linear-gradient(135deg, #141a20 0%, #1a2027 100%);
+    background: linear-gradient(to bottom right, #232F3E, #37475A);
+    position: relative;
+    overflow: hidden;
+    color: #fff;
+    
+    /*background: linear-gradient(135deg, #141a20 0%, #1a2027 100%); */
+    
+    
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -60,8 +68,9 @@
 
 
 .secao-principal img {
-    max-width: 80%;
+    max-width: 200%;
     height: auto;
+    display: block;
     animation: flutuar 6s ease-in-out infinite;
 
 }/* Image

@@ -7,17 +7,6 @@
     position: relative; /* Necessário para posicionar a linha inferior */
 }
 
-/* Linha decorativa inferior */
-.secao-contato::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 3px;
-    background: linear-gradient(to right, transparent, #3498db, transparent);
-    left: 0;
-    bottom: 0;
-}
-
 /* Estilo título principal */
 .titulo-contato {
     font-family: 'Poppins', sans-serif; 

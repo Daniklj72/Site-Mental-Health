@@ -285,6 +285,12 @@
     align-items: center;
     gap: 0.8rem;
 }
+.author-info i{
+    background-image: linear-gradient(90deg, #3498db, #1abc9c);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
 .author-photo {
     width: 32px;
     height: 32px;

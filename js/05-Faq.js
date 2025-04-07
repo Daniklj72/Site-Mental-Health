@@ -21,24 +21,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-    // Funcionalidade de pesquisa
-    if (searchInput) {
-        searchInput.addEventListener('input', function() {
-            const searchTerm = this.value.toLowerCase();
-            
-            accordionItems.forEach(item => {
-                const question = item.querySelector('.block_inside-button').textContent.toLowerCase();
-                const answer = item.querySelector('.block_inside-body').textContent.toLowerCase();
-                
-                if (question.includes(searchTerm) || answer.includes(searchTerm)) {
-                    item.style.display = '';
-                } else {
-                    item.style.display = 'none';
-                }
-            });
-        });
-    }
-    
     // Funcionalidade de filtro por categoria
     if (categoryBtns.length > 0) {
         categoryBtns.forEach(btn => {

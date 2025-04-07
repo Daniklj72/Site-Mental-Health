@@ -1,121 +1,365 @@
-/* -------------- BLOCO_CABEÇARIO -------------- */
+/* ===== HEADER PRINCIPAL ===== */
 .navbar {
-    background-color: #E7E7E7;
-    padding: 1rem 2rem;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    transition: all 0.3s ease;
-    
-}/* Container principal da barra de navegação */
-
-
-/* -------------- LOGO E TEXTO DA MARCA -------------- */
-.navbar-brand {
-    color: #3498db;
-    font-weight: 700;
-    font-size: 1.6rem;
+    padding: 0 50px;
     display: flex;
     align-items: center;
-    transition: all 0.3s ease;
+    justify-content: space-between;
+    width: 100%;
+    background-color: #fff;
+    height: 80px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
 
-}/* TEXTO DA MARCA >> Mental Health Support */
+.logotipo {
+    display: flex;
+    align-items: center;
+}
 
+.logotipo h1 {
+    font-size: 2.2rem;
+    margin: 0;
+    padding: 0;
+    white-space: nowrap;
+}
 
-.navbar-brand i {
-    margin-right: 0.5rem;
-    font-size: 1.9rem;
-    color: #FF0000;
+/* header pra Desktop */
+.navbar .offcanvas-body {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
 
-}/* LOGO>> coração do cabeçario */
-
-
-/* -------------- MENU DE NAVEGAÇÃO -------------- */
-.navbar-collapse {
-    display: flex !important;
-    justify-content: center;
-
-}/* Container dos topicos navegação [ Home, Volunteers, Blog, FAQ, Contact] */
-
-
+/* navegação dos topicos >> Início, Voluntários, Blog, Páginas, Faq e Contato*/
 .navbar-nav {
     display: flex;
     align-items: center;
-    gap: 1.5rem;
+    margin: 0 auto;
+}
+
+/* Espaçamento entre os >> Início, Voluntários... */
+.navbar-nav .nav-item {
+    margin-right: 35px;
+}
+
+
+/* Estrutura dos itens do cabeçario */
+.item-menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+/* Margem do Ícone para o topcicos >> Início, Voluntários...  */
+.icone-menu {
+    margin-right: 8px;
+}
+
+/* Estilo dos links do menu */
+.navbar-nav .nav-link {
+    font-weight: 800;
+    color: #2d2f34;
+    padding: 10px 15px;
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
     margin: 0;
-    padding: 0;
-    list-style: none;
+    transition: none;
+}
 
-}/* Lista de itens de navegação */
-
-
-.nav-item {
-    position: relative;
-
-}/* Container de item de navegação */
-
-
-/* -------------- LINKS DE NAVEGAÇÃO -------------- */
-.nav-link {
-    color: #333;
+/* Efeito hover nos topicos */
+.nav-link:hover {
+    background-image: linear-gradient(90deg, #3498db, #1abc9c);
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
     transition: all 0.3s ease;
-    padding: 0.5rem 0.75rem;
-    white-space: nowrap;
-    font-weight: 500;
-    font-size: 1.4rem;
-    border-bottom: 2px solid transparent;
+}
 
-}/* Estado padrão de todos os links de navegação */
+/* Estilo da seta padrão do Bootstrap */
+.navbar-nav .dropdown-toggle::after {
+    margin-left: 8px;
+    border-top: 0.3em solid;
+    border-right: 0.3em solid transparent;
+    border-left: 0.3em solid transparent;
+    transition: transform 0.3s ease;
+    vertical-align: middle;
+    content: "";
+    display: inline-block;
+}
 
+/* Mantendo a seta visível mas com cor compatível no hover */
+.navbar-nav .nav-link.dropdown-toggle:hover::after {
+    border-top-color: #3498db; /* Cor da seta no hover */
+}
 
-.nav-link:hover,
-.nav-link.active {
-    color: #3498db;
-    border-bottom: 2px solid #3498db;
-
-}/* Estados de hover e ativo dos links de navegação */
-
-
-#nav-inicio.active {
-    color: #3498db;
-
-}/* Estilo específico para o link Home quando ativo */
-
-
-/* -------------- BOTÃO DE LOGIN -------------- */
-.container-botao-login {
-    margin-left: 1.5rem;
-
-}/* Container do botão de login */
+/* Animação da seta quando o dropdown está ativo/aberto */
+.navbar-nav .dropdown-toggle[aria-expanded="true"]::after {
+    transform: rotate(180deg);
+    border-top-color: #3498db; /* Cor da seta quando ativo */
+}
 
 
-#botaoLogin {
-    padding: 0.5rem 1.5rem;
-    border-radius: 5px;
-    background-color: #3498db;
-    color: #ffffff;
+
+/* Estilo da janela Páginas */
+.dropdown-menu {
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
     border: none;
+    background-color: #ffffff;
+    padding: 5px 0;
+    margin-top: 10px;
+}
+/* Estilo dos itens janela Páginas */
+.dropdown-item {
+    font-weight: 600;
+    padding: 10px 15px;
+    transition: all 0.3s ease;
+    color: #2d2f34;
+    border-radius: 4px;
+    margin: 0;
+    width: calc(100% - 10px);
+    margin: 0 5px;
+}
+/* Efeito hover nos itens janela Páginas */
+.dropdown-item:hover {
+    background-image: linear-gradient(90deg, #3498db, #1abc9c);
+    color: #ffffff;
+}
+
+
+/* Container dos botões login/signup*/
+.container-botoes {
+    display: inline-flex;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    margin-left: 30px;
+}
+/* Estilo geral dos botões*/
+.botao-login, .botao-signup {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
     font-weight: 600;
     transition: all 0.3s ease;
+    text-align: center;
+}
+.botao-login {
+    background-color: #2d2f34;
+    color: #fff;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+.botao-signup {
+    background-image: linear-gradient(90deg, #3498db, #1abc9c);
+    color: #fff;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+.botao-login:hover {
+    background-color: #1d1e22;
+    color: #fff;
+}
+.botao-signup:hover {
+    background-image: linear-gradient(90deg, #2980b9, #16a085);
+    color: #fff;
+}
 
-}/* Estilização do botão de login */
 
 
-#botaoLogin:hover {
-    background-color: #181E25;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(52, 152, 219, 0.3);
+/* header pra mobile */
+@media (max-width: 991px) {
+    
+    /* Altura do menu mobile */
+    .navbar {
+        padding: 0 20px;
+        height: 60px;
+    }
+    .logotipo h1 {
+        font-size: 1.8rem;
+    }
+    
+    /* painel lateral mobile*/
+    .offcanvas {
+        background: linear-gradient(to right, #2c3e50, #1a252f);
+        max-width: 280px;
+        border-left: none;
+    }
+    .offcanvas-header {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 18px 15px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .offcanvas-title {
+        color: #ffffff;
+        font-weight: 500;
+        font-size: 18px;
+        margin: 0;
+    }
+    .botao-fechar {
+        background: rgba(255, 255, 255, 0.15);
+        color: #ffffff;
+        border: none;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    .botao-fechar:hover {
+        background: rgba(255, 255, 255, 0.25);
+    }
+    .botao-fechar i {
+        font-size: 20px;
+    }
+    
+    /* Estrutura o corpo do painel lateral com espaçamento e organização flexível */
+    .offcanvas .offcanvas-body {
+        padding: 6px 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: calc(100% - 70px);
+    }
+    
+    /* Define cada item de menu com largura completa e remove espaçamentos externos */
+    .offcanvas .navbar-nav .nav-item {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+    }
 
-}/* Efeito de hover no botão de login */
+    /* Formata os topicos Início, Voluntários... com fundo transparente, texto branco e cantos arredondados */
+    .offcanvas .navbar-nav .nav-link {
+        color: #ffffff;
+        padding: 12px 25px;
+        margin: 3px 15px;
+        border-radius: 8px;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        display: flex;
+        width: calc(100% - 30px);
+    }
 
+    /* Alinha horizontalmente o ícone com texto dos topicos Início, Voluntários... */
+    .offcanvas .item-menu {
+        display: flex;
+        align-items: center;
+        width: 100%;
+    }
+    
+    /* Espaçamento e tamanho dos íconescom os topicos  */
+    .offcanvas .icone-menu {
+        margin-right: 12px;
+        font-size: 18px;/* tamanho do ícone */
+        width: 20px;
+        text-align: center;
+    }
+    
+    /* Permite que o texto ocupe o espaço disponível no item do menu */
+    .offcanvas .texto-menu {
+        flex: 1;
+    }
+    /* Adiciona efeito nos topicos, fundo mais claro e animação de deslizamento */
+    .offcanvas .navbar-nav .nav-link:hover {
+        background: rgba(255, 255, 255, 0.1);
+        color: #ffffff;
+        transform: translateX(5px);
+    }
 
-/* -------------- EFEITO DE ROLAGEM -------------- */
-.navbar.rolada {
-    background-color: #E7E7E7 !important;
-    backdrop-filter: blur(10px);
-    padding: 0.75rem 2rem;
+    /* Organiza os itens do menu dropdown(janela > Equipe DEV, Agendamento , preço ) */
+    .offcanvas .navbar-nav .nav-link.dropdown-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        padding-right: 15px;
+    }
+    /* Seta de dropdown(janela > Equipe DEV, Agendamento , preço )  */
+    .offcanvas .navbar-nav .dropdown-toggle::after {
+        margin-left: 10px;
+        position: static;
+        border-top: 0.25em solid #fff;
+        border-right: 0.25em solid transparent;
+        border-left: 0.25em solid transparent;
+        transition: transform 0.3s ease;
+        display: inline-block;
+        vertical-align: middle;
+    }
+    /* Rotaciona a seta quando clicar na Paginaso está aberto */
+    .offcanvas .navbar-nav .dropdown-toggle[aria-expanded="true"]::after {
+        transform: rotate(180deg);
+    }
+    /* Fundo da janela > Equipe DEV, Agendamento , preço */
+    .offcanvas .navbar-nav .dropdown-menu {
+        background-color: rgba(0, 0, 0, 0.2);
+        border: none;
+        margin: 0 15px;
+        padding: 5px;
+        border-radius: 8px;
+        width: calc(100% - 30px);
+    }
+    /* Estilo dos 'subtopicos' da paginas */
+    .offcanvas .dropdown-item {
+        color: #ffffff;
+        padding: 10px 15px;
+        border-radius: 6px;
+        margin: 5px 0;
+        font-weight: 400;
+        transition: all 0.3s ease;
+    }
+    /* Efeito nos 'subtopicos' da paginas com fundo mais claro e uma leve animação */
+    .offcanvas .dropdown-item:hover {
+        background: rgba(255, 255, 255, 0.1);
+        color: #ffffff;
+        transform: translateX(3px);
+    }
+    
 
-}/* Aparência da barra de navegação quando rolada */
+    /* BASE dos botões de login/signup*/
+    .offcanvas .container-botoes {
+        width: calc(100% - 30px);
+        margin: 15px 15px;
+        display: flex;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+    /* Estilo comum para os botões de login e signup */
+    .offcanvas .botao-login, 
+    .offcanvas .botao-signup {
+        padding: 12px 0;
+        font-weight: 700;
+        flex: 1;
+        text-align: center;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 16px;
+        letter-spacing: 0.5px;
+        transition: all 0.3s ease;
+    }
+
+    .offcanvas .botao-login {
+        background-color: #2D2F34;
+        color: #fff;
+    }
+    .offcanvas .botao-signup {
+        background-image: linear-gradient(90deg, #3498db, #1abc9c);
+        color: #fff;
+    }
+    
+    .offcanvas .botao-login:hover {
+        background-color: #1D1E22;
+    }
+    .offcanvas .botao-signup:hover {
+        background-image: linear-gradient(90deg, #2980b9, #16a085);
+    }
+}
