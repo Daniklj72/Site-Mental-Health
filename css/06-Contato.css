@@ -1,102 +1,163 @@
-/* Estilo principal da seção */
+/* ================ SEÇÃO DE CONTATO ================ */
 .secao-contato {
-    background-color: #263238; 
-    padding: 60px 0; 
-    color: white; 
-    text-align: center;
-    position: relative; /* Necessário para posicionar a linha inferior */
+    background: linear-gradient(to bottom right, #232F3E, #37475A);
+    padding: 80px 0;
+    color: #ecf0f1;
+    position: relative;
 }
 
-/* Estilo título principal */
 .titulo-contato {
-    font-family: 'Poppins', sans-serif; 
-    font-weight: 600; 
-    font-size: 2.5rem; 
-    margin-bottom: 50px; 
-    color: white; 
+    color: #fff;
+    font-weight: 700;
+    text-shadow: 0 4px 12px rgba(26, 188, 156, 0.3);
+    letter-spacing: 1px;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    text-align: center;
 }
 
-/* Estilo do formulário */
+/* ================ FORMULÁRIO DE CONTATO ================ */
 .formulario-contato {
-    display: flex; 
-    flex-direction: column; 
-    align-items: flex-start; 
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+    height: 100%;
 }
 
-/* Estilo dos campos do formulário */
+.formulario-contato:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(26, 188, 156, 0.2);
+    border-color: rgba(52, 152, 219, 0.5);
+}
+
 .campo-contato {
-    width: 100%; 
-    background-color: #1a2327; 
-    border: none; 
+    width: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(52, 152, 219, 0.3);
     padding: 15px 20px;
-    margin-bottom: 15px; 
-    color: white; 
-    border-radius: 4px; 
-    font-family: 'Poppins', sans-serif; 
+    margin-bottom: 20px;
+    color: #ecf0f1;
+    border-radius: 8px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: border-color 0.3s, box-shadow 0.3s;
 }
 
-/* Estilo específico da área de mensagem */
+.campo-contato:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 10px rgba(52, 152, 219, 0.3);
+}
+
+.campo-contato::placeholder {
+    color: #bdc3c7;
+}
+
 .campo-mensagem {
-    height: 100px; 
-    resize: none; 
+    height: 120px;
+    resize: none;
 }
 
-/* Estilo do botão de enviar */
 .btn-enviar {
-    background-color: #4EADF3; 
-    color: white; 
+    width: 100%;
+    padding: 0.8rem;
+    background: linear-gradient(90deg, #3498db, #1abc9c);
     border: none;
-    padding: 12px 30px; 
-    border-radius: 4px; 
-    cursor: pointer; 
-    font-family: 'Poppins', sans-serif; 
-    font-weight: 500; 
-    margin-top: 15px;
+    color: #fff;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 700;
+    transition: all 0.3s;
+    cursor: pointer;
+    text-align: center;
+    margin-top: 0.5rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    letter-spacing: 0.5px;
 }
 
-/* Estilo da caixa de informações de emergência */
+.btn-enviar:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(26, 188, 156, 0.3);
+}
+
+/* ================ BOX DE EMERGÊNCIA ================ */
 .box-emergencia {
-    background-color: #1a2327; 
-    padding: 30px; 
-    border-radius: 4px; 
-    text-align: left; 
-    height: 241px; 
-    display: flex; 
-    flex-direction: column; 
-    justify-content: space-between; 
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
-/* Estilo do título da seção de emergência */
+.box-emergencia:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(52, 152, 219, 0.3);
+    border-color: rgba(52, 152, 219, 0.5);
+}
+
 .titulo-emergencia {
-    font-family: 'Poppins', sans-serif; 
-    font-weight: 600; 
-    font-size: 1.5rem; 
-    margin-bottom: 15px; 
-    color: white; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #fff;
+    text-shadow: 0 2px 8px rgba(26, 188, 156, 0.2);
 }
 
-/* Estilo do texto da seção de emergência */
 .texto-emergencia {
-    color: white; 
-    margin-bottom: 15px; 
-    font-family: 'Poppins', sans-serif; 
-    line-height: 1.9; 
+    color: #bdc3c7;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    flex: 1;
 }
 
-/* Estilo do botão de emergência */
 .btn-emergencia {
-    background-color: #e74c3c; 
-    color: white; 
-    display: inline-block;
-    padding: 12px 25px; 
-    border-radius: 4px; 
-    text-decoration: none; 
-    font-family: 'Poppins', sans-serif; 
-    font-weight: 500; 
-    margin-top: auto; 
+    background: linear-gradient(90deg, #e74c3c, #c0392b);
+    color: white;
+    display: block;
+    padding: 0.8rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 700;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(231, 76, 60, 0.3);
+    transition: all 0.3s;
+    border: none;
 }
 
-/* Estilo do ícone dentro do botão de emergência */
+.btn-emergencia:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(231, 76, 60, 0.4);
+}
+
 .btn-emergencia i {
     margin-right: 8px;
+}
+
+/* ================ RESPONSIVIDADE ================ */
+@media (max-width: 767px) {
+    .secao-contato {
+        padding: 50px 0;
+    }
+    
+    .titulo-contato {
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+    
+    .box-emergencia {
+        margin-top: 30px;
+    }
 }
