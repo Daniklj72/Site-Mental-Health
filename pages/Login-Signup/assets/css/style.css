@@ -12,14 +12,18 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #3498db6e;
+    background: #2C3E50;
+    color: #ecf0f1;
 }
 
 .container {
     width: 80%;
     height: 80vh;
     display: flex;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.212);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    overflow: hidden;
+    background: #f5f7fa;
 }
 
 .form-image {
@@ -27,7 +31,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #fff;
+    background-color: #e6eef5;
     padding: 1rem;
 }
 
@@ -49,6 +53,12 @@ body {
     margin-bottom: 2rem;
     display: flex;
     justify-content: space-between;
+    position: relative;
+}
+
+.form-header h1 {
+    color: #232F3E;
+    font-weight: 700;
 }
 
 .form-header h1::after {
@@ -56,7 +66,7 @@ body {
     display: block;
     width: 5rem;
     height: 0.3rem;
-    background-color: #3498db;
+    background: linear-gradient(90deg, #3498db, #1abc9c);
     margin: 0 auto;
     position: absolute;
     border-radius: 10px;
@@ -75,32 +85,45 @@ body {
     margin-right: 1rem;
 }
 
+.input-box label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #37475A;
+    margin-bottom: 8px;
+}
+
 .input-box input {
     margin: 0.6rem 0;
     padding: 0.8rem 1.2rem;
-    border: none;
-    border-radius: 10px;
-    box-shadow: 1px 1px 6px #0000001c;
+    border: 1px solid rgba(52, 152, 219, 0.3);
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
     font-size: 0.8rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
 }
 
 .input-box input:hover {
-    background-color: #eeeeee75;
+    background-color: #f9f9f9;
 }
 
-.input-box input:focus-visible {
-    outline: 1px solid #3498dbe1;
-}
-
-.input-box label,
-.gender-title h6 {
-    font-size: 0.75rem;
-    font-weight: 600;
-    color: #000000c0;
+.input-box input:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 10px rgba(52, 152, 219, 0.3);
 }
 
 .input-box input::placeholder {
-    color: #000000be;
+    color: #95a5a6;
+}
+
+.gender-inputs {
+    width: 100%;
+}
+
+.gender-title h6 {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #37475A;
 }
 
 .gender-group {
@@ -122,59 +145,50 @@ body {
 .gender-input label {
     font-size: 0.81rem;
     font-weight: 600;
-    color: #000000c0;
+    color: #37475A;
 }
 
-.continue-button button {
-    width: 100%;
-    margin-top: 1rem;
-    border: none;
-    background-color: #3498db;
-    padding: 0.62rem;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.continue-button button:hover {
-    background-color: #3498dbe1;
-}
-
-.continue-button button a {
-    text-decoration: none;
-    font-size: 0.93rem;
-    font-weight: 500;
-    color: #fff;
-}
-
+/* Botão Cadastrar */
 .btn-primary {
     width: 100%;
     margin-top: 1rem;
     border: none;
-    background-color: #3498db;
-    padding: 0.62rem;
-    border-radius: 5px;
+    background: linear-gradient(90deg, #3498db, #1abc9c);
+    padding: 0.8rem;
+    border-radius: 8px;
     cursor: pointer;
     color: #fff;
+    font-weight: 700;
+    font-size: 1rem;
+    transition: all 0.3s;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    letter-spacing: 0.5px;
 }
 
 .btn-primary:hover {
-    background-color: #3498dbe1;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(26, 188, 156, 0.3);
 }
 
+/* Botão Voltar ao login */
 .btn-secondary {
     width: 100%;
     margin-top: 0.5rem;
-    border: 2px solid #3498db;
+    border: 2px solid #1abc9c; 
     background-color: transparent;
     padding: 0.62rem;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
-    color: #3498db;
+    color: #1abc9c; 
+    font-weight: 600;
+    transition: all 0.3s ease;
 }
 
 .btn-secondary:hover {
-    background-color: #3498dbe1;
+    background: linear-gradient(90deg, #1abc9c, #16a085);
+    border-color: transparent;
     color: #fff;
+    transform: translateY(-2px);
 }
 
 .btn-senha {
@@ -187,12 +201,6 @@ body {
     cursor: pointer;
     color: #3498db;
 }
-
-/* .btn-senha:hover {
-    background-color: #3498dbe1;
-    color: #fff;
-} */
-
 
 @media screen and (max-width: 1330px) {
     .form-image {
