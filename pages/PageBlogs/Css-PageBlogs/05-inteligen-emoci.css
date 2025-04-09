@@ -1,0 +1,388 @@
+body {
+    background-color: #2C3E50;  
+    color: #ecf0f1;            
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+}
+
+
+.cabecalho {
+    background: rgba(35, 47, 62, 0.95);  
+    position: sticky;                   
+    top: 0;                              
+    z-index: 1000;                      
+}
+
+
+.logotipo {
+    font-size: 1.8rem;          
+    font-weight: 700;           
+    color: #fff;                
+    text-decoration: none;      
+}
+
+.logotipo span {
+    background: linear-gradient(90deg, #3498db, #1abc9c);  
+    -webkit-background-clip: text;                        
+    background-clip: text;                                
+    -webkit-text-fill-color: transparent;                 
+}
+
+/* ===== TÍTULOS E TEXTOS ===== */
+h1, h2, h3, .card-title {
+    color: #fff !important;                             
+    text-shadow: 0 4px 12px rgba(26, 188, 156, 0.2);   
+}
+
+/* parágrafos e textos */
+.lead, p, .card-text {
+    color: #d5dbdb !important;   
+}
+
+/* Sobrescreve a classe text-dark do Bootstrap para texto branco (para o tema escuro) */
+.text-dark {
+    color: #fff !important;    
+}
+
+/* Sobrescreve a classe text-secondary do Bootstrap para texto mais claro */
+.text-secondary {
+    color: #bdc3c7 !important;  
+}
+
+
+/* ===== ELEMENTOS DE ESTILO ===== */
+.custom-border-bottom {/* Cria uma borda inferior sutil para separar seções */
+    border-bottom: 2px solid rgba(52, 152, 219, 0.2);
+}
+
+/* Aplica um fundo gradiente sutil para blocos de citação */
+.custom-gradient {
+    background: linear-gradient(90deg, rgba(52, 152, 219, 0.1), rgba(26, 188, 156, 0.1)); /* Gradiente azul para verde-água com baixa opacidade */
+    color: #ecf0f1;  
+}
+
+
+/* ===== CONTÊINER DE IMAGENS ===== */
+.imagem-container {/* Cria efeitos de hover e transição suave para contêineres de imagem */
+    overflow: hidden;                               
+    transition: transform 0.3s ease, box-shadow 0.3s ease;  
+    border-radius: 15px;                            
+}
+
+/* Efeito de elevação e aumento ao passar o mouse */
+.imagem-container:hover {
+    transform: translateY(-5px) scale(1.03);       
+    box-shadow: 0 15px 35px rgba(26, 188, 156, 0.3);  
+}
+
+/* Animação suave para a imagem dentro do contêiner */
+.imagem-container img {
+    transition: transform 0.4s ease;  
+}
+
+/* Efeito de zoom na imagem ao passar o mouse */
+.imagem-container:hover img {
+    transform: scale(1.05);
+}
+
+
+/* ===== LISTA DE BENEFÍCIOS ===== */
+.lista-beneficios li:before {/* Adiciona ícones esse sertinho V */
+    content: "\f00c";          
+    font-family: "Font Awesome 6 Free"; 
+    font-weight: 900;           
+    color: #1abc9c;            
+    position: absolute;         
+    left: 0;                  
+}
+/* Estiliza as bordas entre itens da lista */
+.lista-beneficios li {
+    border-color: rgba(255, 255, 255, 0.1) !important;  
+}
+/* Destaca os termos em negrito com cor azul */
+.lista-beneficios li strong {
+    color: #3498db;  
+}
+
+/* ===== CARTÕES DE DICAS ===== */
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+    background: rgba(255, 255, 255, 0.05);  
+    backdrop-filter: blur(10px);           
+    border-radius: 15px;                   
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); 
+    border: 1px solid rgba(255, 255, 255, 0.1); 
+    color: #ecf0f1;                       
+}
+
+/* Efeito ao passar o mouse sobre os cartões */
+.card:hover {
+    transform: translateY(-8px) scale(1.02); 
+    box-shadow: 0 15px 35px rgba(26, 188, 156, 0.3) !important;  
+    border-color: rgba(52, 152, 219, 0.5);  
+}
+
+/* Cor de fundo dos cartões */
+.card-body {
+    background: rgba(52, 73, 94, 0.3); 
+}
+/* Gradiente dos cabeçalhos dos cartões */
+.custom-header-gradient {
+    background: linear-gradient(135deg, #3498db, #1abc9c); 
+}
+
+/* Círculos com números das dicas */
+.dica-numero {
+    background: rgba(255, 255, 255, 0.2);  
+    width: 36px;                          
+    height: 36px;                       
+    border-radius: 50%;                   
+    display: flex;                       
+    align-items: center;                  
+    justify-content: center;             
+}
+
+/*  estilo do iconi */
+.dica-icone {
+    color: rgba(26, 188, 156, 0.2);      
+    background: rgba(52, 152, 219, 0.05);  
+}
+/* Transição suave do ícone inferior*/
+.dica-icone i {
+    transition: transform 0.3s ease, color 0.3s ease; 
+}
+/* Efeito no ícone inferior dos cartão */
+.card:hover .dica-icone i {
+    transform: scale(1.2);               
+    color: rgba(26, 188, 156, 0.6);   
+}
+
+
+.rodape {
+    background: linear-gradient(to bottom, #37475A, #1a2327);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #ecf0f1;
+    position: relative;
+    overflow: hidden;
+}
+
+.rodape::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #3498db, #1abc9c);
+}
+
+.rodape-conteudo {
+    position: relative;
+    z-index: 1;
+}
+
+/* ================ LOGO E DESCRIÇÃO ================ */
+.rodape-logo {
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.8rem;
+    letter-spacing: 0.5px;
+    text-shadow: 0 2px 10px rgba(26, 188, 156, 0.3);
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+.rodape-slogan {
+    color: #bdc3c7;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+/* ================ LINKS SOCIAIS ================ */
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.5rem;
+    width: 2.5rem;
+    color: #ffffff;
+    border-radius: 50%;
+    transition: all 0.4s;
+    text-decoration: none;
+}
+
+.social-link:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.social-link i {
+    font-size: 1.25rem;
+}
+
+.social-instagram {
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+}
+
+.social-facebook {
+    background-color: #4267b3;
+}
+
+.social-whatsapp {
+    background-color: #25d366;
+}
+
+/* ================ TÍTULOS E LINKS ================ */
+.rodape-titulo {
+    color: #fff;
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin-bottom: 1.2rem;
+    position: relative;
+    padding-bottom: 0.8rem;
+}
+
+.rodape-titulo::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 40px;
+    height: 2px;
+    background: linear-gradient(90deg, #3498db, #1abc9c);
+}
+
+.rodape-link {
+    color: #bdc3c7;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+    display: block;
+    padding: 0.35rem 0;
+}
+
+.rodape-link:hover {
+    color: #3498db;
+    transform: translateX(5px);
+}
+
+/* ================ NEWSLETTER ================ */
+.rodape-texto {
+    color: #bdc3c7;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.newsletter-container {
+    position: relative;
+    margin-top: 1.5rem;
+}
+
+.newsletter-inner {
+    display: flex;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.newsletter-inner:focus-within {
+    border-color: #3498db;
+    box-shadow: 0 0 15px rgba(52, 152, 219, 0.3);
+}
+
+.newsletter-input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    padding: 12px 15px;
+    color: #fff;
+    font-size: 0.95rem;
+}
+
+.newsletter-input:focus {
+    outline: none;
+}
+
+.newsletter-input::placeholder {
+    color: #95a5a6;
+}
+
+.newsletter-botao {
+    background: linear-gradient(90deg, #3498db, #1abc9c);
+    border: none;
+    color: #fff;
+    padding: 0 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.newsletter-botao:hover {
+    background: linear-gradient(90deg, #2980b9, #16a085);
+}
+
+.rodape-privacidade {
+    color: #95a5a6;
+    font-size: 0.8rem;
+    font-style: italic;
+}
+
+/* ================ COPYRIGHT ================ */
+.rodape-divisor {
+    height: 1px;
+    background: rgba(255, 255, 255, 0.05);
+    margin: 0 1.5rem;
+}
+
+.rodape-copyright {
+    font-size: 0.9rem;
+    color: #bdc3c7;
+}
+
+.rodape-termos {
+    color: #bdc3c7;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.rodape-termos:hover {
+    color: #3498db;
+}
+
+.rodape-separador {
+    margin: 0 10px;
+    color: #95a5a6;
+}
+
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 767px) {
+    /* Ajustes de rodapé para mobile */
+    .rodape-copyright {
+        text-align: center;
+    }
+    
+    .rodape-termos {
+        display: block;
+        margin: 5px 0;
+    }
+    .rodape-separador {
+        display: none;
+    }
+    
+    /* Esconde elementos desktop em mobile */
+    .desktop-only {
+        display: none !important;
+    }
+}
+
+
+@media (min-width: 768px) {
+    /* Esconde elementos mobile em desktop */
+    .mobile-only {
+        display: none !important;
+    }
+}
