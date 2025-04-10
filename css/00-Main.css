@@ -4,58 +4,42 @@
     box-sizing: border-box;
 
 }
-
 body{
     font-family: __inter_20b187, __inter_Fallback_20b187, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif; ;
     line-height: 1.6; 
     overflow-x: hidden; 
 }
-
-
 h1, h2, h3{
     font-weight: 700; 
     line-height: 1.2; 
     margin-bottom: 1rem;
 }
-
 h1{
     font-size: clamp(2rem, 5vw, 3.5rem); 
 }
-
 h2{
     font-size: clamp(1.8rem, 4vw, 2.5rem);
     text-align: center; 
     margin-bottom: 2.5rem;
 }
-
 h3 {
     font-size: clamp(1.2rem, 3vw, 1.8rem);
 }
-
 p {
     margin-bottom: 1rem; 
     font-size: 1rem;
 }
-
 a {
     text-decoration: none; 
     transition: all 0.3s ease;
 }
-
-section, article {
-    padding: 5rem 0;
-
-}/* Espaçamento entre seções */
-
 
 .container {
     width: auto; 
     margin: 0 auto; 
     padding: 0 1rem; 
 
-}/* Container */
-
-
+}
 .titulo-secao {
     text-align: center;
     margin-bottom: 3rem;
@@ -63,8 +47,7 @@ section, article {
     text-transform: uppercase; 
     letter-spacing: 1px; 
 
-}/* Títulos de seção */
-
+}
 .titulo-secao::after { 
     content: '';
     position: absolute;
@@ -75,4 +58,4 @@ section, article {
     height: 3px;
     background-color: #3498db;
 
-}/* Elemento decorativo */
+}

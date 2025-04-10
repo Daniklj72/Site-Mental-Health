@@ -15,13 +15,11 @@
     height: 4px;
     background: linear-gradient(90deg, #3498db, #1abc9c);
 }
-
 .rodape-conteudo {
     position: relative;
     z-index: 1;
 }
 
-/* ================ LOGO E DESCRIÇÃO ================ */
 .rodape-logo {
     color: #fff;
     font-weight: 700;
@@ -31,7 +29,6 @@
     margin-bottom: 1rem;
     text-align: left;
 }
-
 .rodape-slogan {
     color: #bdc3c7;
     font-size: 0.95rem;
@@ -39,8 +36,6 @@
     margin-bottom: 1.5rem;
     text-align: left;
 }
-
-/* ================ LINKS SOCIAIS ================ */
 .social-link {
     display: flex;
     align-items: center;
@@ -52,24 +47,19 @@
     transition: all 0.4s;
     text-decoration: none;
 }
-
 .social-link:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
-
 .social-link i {
     font-size: 1.25rem;
 }
-
 .social-instagram {
     background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
 }
-
 .social-facebook {
     background-color: #4267b3;
 }
-
 .social-whatsapp {
     background-color: #25d366;
 }
@@ -83,7 +73,6 @@
     position: relative;
     padding-bottom: 0.8rem;
 }
-
 .rodape-titulo::after {
     content: '';
     position: absolute;
@@ -93,7 +82,6 @@
     height: 2px;
     background: linear-gradient(90deg, #3498db, #1abc9c);
 }
-
 .rodape-link {
     color: #bdc3c7;
     text-decoration: none;
@@ -102,7 +90,6 @@
     display: block;
     padding: 0.35rem 0;
 }
-
 .rodape-link:hover {
     color: #3498db;
     transform: translateX(5px);
@@ -114,12 +101,10 @@
     font-size: 0.95rem;
     line-height: 1.5;
 }
-
 .newsletter-container {
     position: relative;
     margin-top: 1.5rem;
 }
-
 .newsletter-inner {
     display: flex;
     background: rgba(255, 255, 255, 0.05);
@@ -129,12 +114,10 @@
     overflow: hidden;
     transition: all 0.3s ease;
 }
-
 .newsletter-inner:focus-within {
     border-color: #3498db;
     box-shadow: 0 0 15px rgba(52, 152, 219, 0.3);
 }
-
 .newsletter-input {
     flex: 1;
     background: transparent;
@@ -143,15 +126,12 @@
     color: #fff;
     font-size: 0.95rem;
 }
-
 .newsletter-input:focus {
     outline: none;
 }
-
 .newsletter-input::placeholder {
     color: #95a5a6;
 }
-
 .newsletter-botao {
     background: linear-gradient(90deg, #3498db, #1abc9c);
     border: none;
@@ -160,11 +140,9 @@
     cursor: pointer;
     transition: all 0.3s ease;
 }
-
 .newsletter-botao:hover {
     background: linear-gradient(90deg, #2980b9, #16a085);
 }
-
 .rodape-privacidade {
     color: #95a5a6;
     font-size: 0.8rem;
@@ -177,38 +155,31 @@
     background: rgba(255, 255, 255, 0.05);
     margin: 0 1.5rem;
 }
-
 .rodape-copyright {
     font-size: 0.9rem;
     color: #bdc3c7;
 }
-
 .rodape-termos {
     color: #bdc3c7;
     text-decoration: none;
     transition: color 0.3s ease;
 }
-
 .rodape-termos:hover {
     color: #3498db;
 }
-
 .rodape-separador {
     margin: 0 10px;
     color: #95a5a6;
 }
 
-/* ================ RESPONSIVIDADE ================ */
 @media (max-width: 767px) {
     .rodape-copyright {
         text-align: center;
     }
-    
     .rodape-termos {
         display: block;
         margin: 5px 0;
     }
-    
     .rodape-separador {
         display: none;
     }

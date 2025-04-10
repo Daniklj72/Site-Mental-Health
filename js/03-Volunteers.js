@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
         modalDetalhes.style.display = 'none';
     });
 
-    // Fechar modal ao clicar fora
+    // Fechar
     modalDetalhes.addEventListener('click', (event) => {
         if (event.target === modalDetalhes) {
             modalDetalhes.style.display = 'none';

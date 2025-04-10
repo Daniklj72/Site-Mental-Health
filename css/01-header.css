@@ -1,153 +1,329 @@
-/* ===== HEADER PRINCIPAL ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    color: #2d2f34;
+}
+
+.cabecalho {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
 .navbar {
-    padding: 0 50px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    background-color: #fff;
-    height: 80px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    height: 70px;
+    padding: 0 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
-
 .logotipo {
     display: flex;
     align-items: center;
 }
-
 .logotipo h1 {
-    font-size: 2.2rem;
+    font-size: 1.8rem;
     margin: 0;
     padding: 0;
     white-space: nowrap;
 }
-
-/* header pra Desktop */
-.navbar .offcanvas-body {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-}
-
-/* navegação dos topicos >> Início, Voluntários, Blog, Páginas, Faq e Contato*/
-.navbar-nav {
-    display: flex;
-    align-items: center;
-    margin: 0 auto;
-}
-
-/* Espaçamento entre os >> Início, Voluntários... */
-.navbar-nav .nav-item {
-    margin-right: 35px;
-}
-
-
-/* Estrutura dos itens do cabeçario */
-.item-menu {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-}
-
-/* Margem do Ícone para o topcicos >> Início, Voluntários...  */
-.icone-menu {
-    margin-right: 8px;
-}
-
-/* Estilo dos links do menu */
-.navbar-nav .nav-link {
-    font-weight: 800;
-    color: #2d2f34;
-    padding: 10px 15px;
-    font-size: 1.3rem;
-    display: flex;
-    align-items: center;
-    margin: 0;
-    transition: none;
-}
-
-/* Efeito hover nos topicos */
-.nav-link:hover {
-    background-image: linear-gradient(90deg, #3498db, #1abc9c);
-    color: transparent;
+.logotipo span {
+    background: linear-gradient(90deg, #3498db, #1abc9c);
     -webkit-background-clip: text;
     background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+/* Navegação Desktop */
+.desktop-nav {
+    display: none;
+}
+.desktop-nav .nav-list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.desktop-nav .nav-item {
+    margin: 0 5px;
+    position: relative;
+}
+.desktop-nav .nav-link {
+    display: flex;
+    align-items: center;
+    padding: 8px 16px;
+    color: #2d2f34;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border-radius: 6px;
+}
+.desktop-nav .nav-link:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.desktop-nav .nav-link:hover i,
+.desktop-nav .nav-link:hover span {
+    background: linear-gradient(90deg, #3498db, #1abc9c);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
     transition: all 0.3s ease;
 }
 
-/* Estilo da seta padrão do Bootstrap */
-.navbar-nav .dropdown-toggle::after {
-    margin-left: 8px;
-    border-top: 0.3em solid;
+.desktop-nav .dropdown:hover .nav-link i,
+.desktop-nav .dropdown:hover .nav-link span {
+    background: linear-gradient(90deg, #3498db, #1abc9c);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.desktop-nav .nav-link i {
+    margin-right: 8px;
+    font-size: 1rem;
+}
+/* Dropdown Desktop */
+.desktop-nav .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    border-radius: 6px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 8px 0;
+    min-width: 180px;
+    z-index: 1001;
+    display: none;
+}
+.desktop-nav .dropdown:hover .dropdown-menu {
+    display: block;
+}
+.desktop-nav .dropdown-item {
+    display: block;
+    padding: 8px 16px;
+    color: #2d2f34;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.desktop-nav .dropdown-item:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    background: linear-gradient(90deg, #3498db, #1abc9c);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Botões de login/signup */
+.desktop-buttons {
+    display: none;
+}
+/* Botões agrupados */
+.container-auth-buttons {
+    display: flex;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+.desktop-buttons .auth-btn {
+    padding: 8px 16px;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    text-align: center;
+}
+.desktop-buttons .login-btn {
+    background-color: #2D2F34;
+    color: #fff;
+}
+.desktop-buttons .signup-btn {
+    background-image: linear-gradient(90deg, #3498db, #1abc9c);
+    color: #fff;
+}
+.desktop-buttons .login-btn:hover {
+    background-color: #1d1e22;
+}
+.desktop-buttons .signup-btn:hover {
+    background-image: linear-gradient(90deg, #2980b9, #16a085);
+}
+
+
+
+.menu-mobile {
+    position: fixed;
+    top: 0;
+    right: -280px;
+    width: 280px;
+    height: 100vh;
+    background: linear-gradient(135deg, #2c3e50, #1a252f);
+    z-index: 1001;
+    transition: right 0.3s ease;
+    overflow-y: auto;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+}
+.menu-mobile.active {
+    right: 0;
+}
+.menu-mobile-header {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.menu-title {
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin: 0;
+}
+/* Botão fechar */
+.menu-close {
+    background: rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+    border: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.menu-close:hover {
+    background: rgba(255, 255, 255, 0.25);
+}
+.menu-close i {
+    font-size: 18px;
+}
+
+/* Lista dos topicos, Início, Voluntários, Blog... */
+.menu-mobile .nav-list {
+    list-style: none;
+    padding: 12px 0;
+}
+.menu-mobile .nav-item {
+    margin: 5px 0;
+}
+.menu-mobile .nav-link {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    margin: 0 10px;
+    border-radius: 6px;
+}
+.menu-mobile .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateX(3px);
+}
+.menu-mobile .nav-link i {
+    margin-right: 10px;
+    font-size: 1.1rem;
+    width: 20px;
+    text-align: center;
+}
+.menu-mobile .dropdown {
+    position: relative;
+}
+.menu-mobile .dropdown-toggle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    position: relative;
+}
+.menu-mobile .dropdown-toggle::after {
+    content: "";
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 10px;
+    border-top: 0.3em solid #fff;
     border-right: 0.3em solid transparent;
     border-left: 0.3em solid transparent;
     transition: transform 0.3s ease;
-    vertical-align: middle;
-    content: "";
-    display: inline-block;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
 }
-
-/* Mantendo a seta visível mas com cor compatível no hover */
-.navbar-nav .nav-link.dropdown-toggle:hover::after {
-    border-top-color: #3498db; /* Cor da seta no hover */
+.menu-mobile .dropdown-toggle[aria-expanded="true"]::after {
+    transform: translateY(-50%) rotate(180deg);
 }
-
-/* Animação da seta quando o dropdown está ativo/aberto */
-.navbar-nav .dropdown-toggle[aria-expanded="true"]::after {
-    transform: rotate(180deg);
-    border-top-color: #3498db; /* Cor da seta quando ativo */
+.menu-mobile .dropdown-menu {
+    display: none;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+    padding: 5px;
+    margin: 0 10px 5px 30px;
+    position: static;
 }
-
-
-
-/* Estilo da janela Páginas */
-.dropdown-menu {
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
-    border: none;
-    background-color: #ffffff;
-    padding: 5px 0;
-    margin-top: 10px;
+.menu-mobile .dropdown-menu.show {
+    display: block;
 }
-/* Estilo dos itens janela Páginas */
-.dropdown-item {
-    font-weight: 600;
+.menu-mobile .dropdown-item {
+    display: block;
     padding: 10px 15px;
-    transition: all 0.3s ease;
-    color: #2d2f34;
-    border-radius: 4px;
-    margin: 0;
-    width: calc(100% - 10px);
-    margin: 0 5px;
-}
-/* Efeito hover nos itens janela Páginas */
-.dropdown-item:hover {
-    background-image: linear-gradient(90deg, #3498db, #1abc9c);
-    color: #ffffff;
-}
-
-
-/* Container dos botões login/signup*/
-.container-botoes {
-    display: inline-flex;
-    overflow: hidden;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    margin-left: 30px;
-}
-/* Estilo geral dos botões*/
-.botao-login, .botao-signup {
-    display: inline-block;
-    padding: 10px 20px;
+    color: #fff;
     text-decoration: none;
-    font-weight: 600;
+    border-radius: 4px;
     transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+.menu-mobile .dropdown-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Adicionar espaço após o dropdown quando aberto */
+.menu-mobile .dropdown.open {
+    margin-bottom: 10px;
+}
+/* ícone de seta do dropdown */
+.menu-mobile .dropdown-toggle[aria-expanded="true"]::after {
+    transform: rotate(180deg);
+}
+
+/* Botões login/signup */
+.container-botoes {
+    margin: 20px 10px;
+    display: flex;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+.botao-login, .botao-signup {
+    padding: 12px 0;
+    font-weight: 600;
+    flex: 1;
     text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
 }
 .botao-login {
-    background-color: #2d2f34;
+    background-color: #2D2F34;
     color: #fff;
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
@@ -160,206 +336,39 @@
 }
 .botao-login:hover {
     background-color: #1d1e22;
-    color: #fff;
 }
 .botao-signup:hover {
     background-image: linear-gradient(90deg, #2980b9, #16a085);
-    color: #fff;
 }
 
+/* Overlay para fechar o menu ao clicar fora */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    transition: opacity 0.3s ease;
+    opacity: 0;
+}
+.overlay.active {
+    display: block;
+    opacity: 1;
+}
 
-
-/* header pra mobile */
-@media (max-width: 991px) {
-    
-    /* Altura do menu mobile */
-    .navbar {
-        padding: 0 20px;
-        height: 60px;
-    }
-    .logotipo h1 {
-        font-size: 1.8rem;
+@media (min-width: 992px) {
+    .navbar-toggler {
+        display: none;
     }
     
-    /* painel lateral mobile*/
-    .offcanvas {
-        background: linear-gradient(to right, #2c3e50, #1a252f);
-        max-width: 280px;
-        border-left: none;
-    }
-    .offcanvas-header {
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        padding: 18px 15px;
+    .desktop-nav {
         display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-    .offcanvas-title {
-        color: #ffffff;
-        font-weight: 500;
-        font-size: 18px;
-        margin: 0;
-    }
-    .botao-fechar {
-        background: rgba(255, 255, 255, 0.15);
-        color: #ffffff;
-        border: none;
-        width: 36px;
-        height: 36px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-    }
-    .botao-fechar:hover {
-        background: rgba(255, 255, 255, 0.25);
-    }
-    .botao-fechar i {
-        font-size: 20px;
     }
     
-    /* Estrutura o corpo do painel lateral com espaçamento e organização flexível */
-    .offcanvas .offcanvas-body {
-        padding: 6px 0;
+    .desktop-buttons {
         display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        height: calc(100% - 70px);
-    }
-    
-    /* Define cada item de menu com largura completa e remove espaçamentos externos */
-    .offcanvas .navbar-nav .nav-item {
-        width: 100%;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        flex-direction: column;
-    }
-
-    /* Formata os topicos Início, Voluntários... com fundo transparente, texto branco e cantos arredondados */
-    .offcanvas .navbar-nav .nav-link {
-        color: #ffffff;
-        padding: 12px 25px;
-        margin: 3px 15px;
-        border-radius: 8px;
-        font-weight: 500;
-        transition: all 0.3s ease;
-        display: flex;
-        width: calc(100% - 30px);
-    }
-
-    /* Alinha horizontalmente o ícone com texto dos topicos Início, Voluntários... */
-    .offcanvas .item-menu {
-        display: flex;
-        align-items: center;
-        width: 100%;
-    }
-    
-    /* Espaçamento e tamanho dos íconescom os topicos  */
-    .offcanvas .icone-menu {
-        margin-right: 12px;
-        font-size: 18px;/* tamanho do ícone */
-        width: 20px;
-        text-align: center;
-    }
-    
-    /* Permite que o texto ocupe o espaço disponível no item do menu */
-    .offcanvas .texto-menu {
-        flex: 1;
-    }
-    /* Adiciona efeito nos topicos, fundo mais claro e animação de deslizamento */
-    .offcanvas .navbar-nav .nav-link:hover {
-        background: rgba(255, 255, 255, 0.1);
-        color: #ffffff;
-        transform: translateX(5px);
-    }
-
-    /* Organiza os itens do menu dropdown(janela > Equipe DEV, Agendamento , preço ) */
-    .offcanvas .navbar-nav .nav-link.dropdown-toggle {
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-        padding-right: 15px;
-    }
-    /* Seta de dropdown(janela > Equipe DEV, Agendamento , preço )  */
-    .offcanvas .navbar-nav .dropdown-toggle::after {
-        margin-left: 10px;
-        position: static;
-        border-top: 0.25em solid #fff;
-        border-right: 0.25em solid transparent;
-        border-left: 0.25em solid transparent;
-        transition: transform 0.3s ease;
-        display: inline-block;
-        vertical-align: middle;
-    }
-    /* Rotaciona a seta quando clicar na Paginaso está aberto */
-    .offcanvas .navbar-nav .dropdown-toggle[aria-expanded="true"]::after {
-        transform: rotate(180deg);
-    }
-    /* Fundo da janela > Equipe DEV, Agendamento , preço */
-    .offcanvas .navbar-nav .dropdown-menu {
-        background-color: rgba(0, 0, 0, 0.2);
-        border: none;
-        margin: 0 15px;
-        padding: 5px;
-        border-radius: 8px;
-        width: calc(100% - 30px);
-    }
-    /* Estilo dos 'subtopicos' da paginas */
-    .offcanvas .dropdown-item {
-        color: #ffffff;
-        padding: 10px 15px;
-        border-radius: 6px;
-        margin: 5px 0;
-        font-weight: 400;
-        transition: all 0.3s ease;
-    }
-    /* Efeito nos 'subtopicos' da paginas com fundo mais claro e uma leve animação */
-    .offcanvas .dropdown-item:hover {
-        background: rgba(255, 255, 255, 0.1);
-        color: #ffffff;
-        transform: translateX(3px);
-    }
-    
-
-    /* BASE dos botões de login/signup*/
-    .offcanvas .container-botoes {
-        width: calc(100% - 30px);
-        margin: 15px 15px;
-        display: flex;
-        border-radius: 10px;
-        overflow: hidden;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    }
-    /* Estilo comum para os botões de login e signup */
-    .offcanvas .botao-login, 
-    .offcanvas .botao-signup {
-        padding: 12px 0;
-        font-weight: 700;
-        flex: 1;
-        text-align: center;
-        text-decoration: none;
-        text-transform: uppercase;
-        font-size: 16px;
-        letter-spacing: 0.5px;
-        transition: all 0.3s ease;
-    }
-
-    .offcanvas .botao-login {
-        background-color: #2D2F34;
-        color: #fff;
-    }
-    .offcanvas .botao-signup {
-        background-image: linear-gradient(90deg, #3498db, #1abc9c);
-        color: #fff;
-    }
-    
-    .offcanvas .botao-login:hover {
-        background-color: #1D1E22;
-    }
-    .offcanvas .botao-signup:hover {
-        background-image: linear-gradient(90deg, #2980b9, #16a085);
     }
 }

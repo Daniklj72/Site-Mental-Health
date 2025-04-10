@@ -1,14 +1,8 @@
-/* -------------- BLOCO_FAQ -------------- */
-
 .Main_Block_faq {
     background: linear-gradient(to bottom right, #232F3E, #37475A);
-    padding: 60px 0;
-    margin: 0; /* Removida a margem de 40px */
-    color: #fff;
-    position: relative;
-    overflow: hidden;
-    width: 100%; /* Garantir que ocupe toda a largura */
-}
+    padding: 80px 0;
+    color: #ecf0f1;
+    position: relative;}
 
 .Main_Block_faq h2 {
     color: #fff;
@@ -19,36 +13,6 @@
     font-size: 2.8rem;
     text-shadow: 0 4px 12px rgba(26, 188, 156, 0.3);
     letter-spacing: 1px;
-}
-
-/* -------------- BARRA DE PESQUISA -------------- */
-.faq-search {
-    max-width: 500px;
-    margin: 0 auto 30px;
-    position: relative;
-}
-.faq-search input {
-    width: 100%;
-    padding: 12px 20px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 30px;
-    font-size: 16px;
-    transition: all 0.3s ease;
-    background: rgba(255, 255, 255, 0.05);
-    color: #ecf0f1;
-    /* Removido o backdrop-filter para evitar borramento */
-}
-.faq-search input:focus {
-    border-color: #1abc9c;
-    box-shadow: 0 0 0 3px rgba(26, 188, 156, 0.2);
-    outline: none;
-}
-.faq-search i {
-    position: absolute;
-    right: 15px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #3498db;
 }
 
 /* -------------- FILTRO DE CATEGORIAS -------------- */
@@ -70,7 +34,6 @@
     color: #ecf0f1;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
 }
-
 .faq-category-btn:hover, .faq-category-btn.active {
     background: linear-gradient(90deg, #3498db, #1abc9c);
     color: #fff;
@@ -92,15 +55,13 @@
 
 /* -------------- LAYOUT DE DUAS COLUNAS -------------- */
 .faq-column {
-    flex: 0 1 calc(50% - 10px); /* Define largura fixa com subtração do gap */
-    max-width: none; /* Remove limite máximo */
-    width: 100%; /* Ocupa toda a largura disponível */
+    flex: 0 1 calc(50% - 10px); 
+    max-width: none;
+    width: 100%; 
 }
-
 .block_inside {
     width: 100%;
 }
-
 .block_inside-item {
     border: 1px solid rgba(255, 255, 255, 0.1);
     margin-bottom: 15px;
@@ -108,17 +69,13 @@
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     overflow: hidden;
     background: rgba(255, 255, 255, 0.05);
-    /* Removido o backdrop-filter para evitar borramento */
     transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
-
 .block_inside-item:hover {
     transform: translateY(-5px);
     box-shadow: 0 15px 35px rgba(26, 188, 156, 0.3);
     border-color: rgba(52, 152, 219, 0.5);
-    /* Garantir que não fique borrado no hover */
 }
-
 .block_inside-button {
     display: flex;
     align-items: center;
@@ -133,7 +90,6 @@
     text-align: left;
     position: relative;
 }
-
 .block_inside-body {
     padding: 0 25px 25px;
     color: #f4f4f4;
@@ -141,22 +97,18 @@
     line-height: 1.6;
     background-color: transparent;
 }
-
 .block_inside-header {
     margin: 0;
 }
-
 .block_inside-button:not(.collapsed) {
     color: #3498db;
     background-color: transparent;
     box-shadow: none;
 }
-
 .block_inside-button:focus {
     box-shadow: none;
     border-color: transparent;
 }
-
 .block_inside-button::after {
     content: "\f078";
     font-family: "Font Awesome 5 Free";
@@ -172,14 +124,12 @@
     color: #1abc9c;
     margin-left: 10px;
 }
-
 .block_inside-button:not(.collapsed)::after {
     transform: translateY(-50%) rotate(180deg);
     color: #3498db;
 }
-/* Ensure text doesn't overlap with icon */
 .block_inside-button span {
-    max-width: calc(100% - 40px); /* Leave space for the icon */
+    max-width: calc(100% - 40px);
     white-space: normal;
     word-wrap: break-word;
 }
@@ -191,7 +141,6 @@
     margin-top: 30px;
     gap: 15px;
 }
-
 .faq-control-btn {
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.2);
@@ -204,7 +153,6 @@
     font-weight: 600;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
-
 .faq-control-btn:hover {
     background: linear-gradient(90deg, #3498db, #1abc9c);
     color: #fff;

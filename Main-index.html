@@ -7,18 +7,14 @@
     
     <title>Mental Health Support Network</title>
 
-    <!-- CSS Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     
-    <!-- Fontes Google -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
 
-    <!-- CSS -->
     <link rel="stylesheet" href="Css/00-Main.css"> 
     <link rel="stylesheet" href="css/01-header.css">
     <link rel="stylesheet" href="css/02-Bloco-1.css">
@@ -31,131 +27,179 @@
 </head>
 <body>
     
-    <!-- Bloco cabeçario-->
-    <header>
-        <nav id="inicio" class="navbar navbar-expand-lg shadow">
-
+    <!-- Modificação do HTML - Parte dos botões no desktop -->
+    <header class="cabecalho">
+        <nav class="navbar">
             <div class="logotipo">
-                <h1>MentePositiva</h1>
+                <h1>Mente<span>Positiva</span></h1>
+            </div>
+            
+            <!-- Navegação Desktop -->
+            <div class="desktop-nav">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="lni lni-home"></i>
+                            <span>Início</span>
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="#voluntarios" class="nav-link">
+                            <i class="lni lni-users"></i>
+                            <span>Voluntários</span>
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="#blog" class="nav-link">
+                            <i class="lni lni-book"></i>
+                            <span>Blog</span>
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link">
+                            <i class="lni lni-grid-alt"></i>
+                            <span>Páginas</span>
+                        </a>
+                        <div class="dropdown-menu">
+                            <a href="pages/DevTeam/index.html" class="dropdown-item">Equipe Dev</a>
+                            <a href="pages/Agendamentos/index.html" class="dropdown-item">Agendamento</a>
+                        </div>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="#faq" class="nav-link">
+                            <i class="lni lni-question-circle"></i>
+                            <span>Faq</span>
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="#contato" class="nav-link">
+                            <i class="lni lni-envelope"></i>
+                            <span>Contato</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- Botões de Login/Signup para Desktop - MODIFICADO -->
+            <div class="desktop-buttons">
+                <div class="container-auth-buttons">
+                    <a href="pages/Login-Signup/login.html" class="auth-btn login-btn">LOGIN</a>
+                    <a href="pages/Login-Signup/cadastro.html" class="auth-btn signup-btn">SIGNUP</a>
+                </div>
             </div>
             
             <!-- Botão Mobile -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#menu-mobile" aria-controls="menu-mobile">
+            <button class="navbar-toggler" id="menu-toggle">
                 <i class="lni lni-menu"></i>
             </button>
-            
-            <!-- Estrutura base do Mobile -->
-            <div class="offcanvas offcanvas-end" id="menu-mobile">
-
-                <!-- Cabeçalho Menu Mobile -->
-                <div class="offcanvas-header">
-                    <h5 class="offcanvas-title">Menu</h5>
-                    <button type="button" class="botao-fechar" data-bs-dismiss="offcanvas" aria-label="Close">
-                        <i class="lni lni-close"></i>
-                    </button>
-                </div>
-                
-                <div class="offcanvas-body">
-
-                    <ul class="navbar-nav">
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="#inicio">
-                                <div class="item-menu">
-                                    <i class="lni lni-home icone-menu"></i>
-                                    <span class="texto-menu">Início</span>
-                                </div>
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="#voluntarios">
-                                <div class="item-menu">
-                                    <i class="lni lni-users icone-menu"></i>
-                                    <span class="texto-menu">Voluntários</span>
-                                </div>
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="#blog">
-                                <div class="item-menu">
-                                    <i class="lni lni-book icone-menu"></i>
-                                    <span class="texto-menu">Blog</span>
-                                </div>
-                            </a>
-                        </li>
-
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
-                                <div class="item-menu">
-                                    <i class="lni lni-grid-alt icone-menu"></i>
-                                    <span class="texto-menu">Páginas</span>
-                                </div>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="pages/DevTeam/index_team.html">Equipe Dev</a></li>
-                                <li><a class="dropdown-item" href="pages/Agendamentos/index.html">Agendamento</a></li>
-                            </ul>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="#faq">
-                                <div class="item-menu">
-                                    <i class="lni lni-question-circle icone-menu"></i>
-                                    <span class="texto-menu">Faq</span>
-                                </div>
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="#contato">
-                                <div class="item-menu">
-                                    <i class="lni lni-envelope icone-menu"></i>
-                                    <span class="texto-menu">Contato</span>
-                                </div>
-                            </a>
-                        </li>
-
-                    </ul>
-                    
-                    <div class="container-botoes">
-                        <a href="pages/Login-Signup/login.html" class="botao-login">LOGIN</a>
-                        <a href="pages/Login-Signup/cadastro.html" class="botao-signup">SIGNUP</a>
-                    </div>
-
-                </div>
-                
-            </div>
         </nav>
     </header>
 
-    <main>
-        <!-- Bloco Principal -->
-        <section class="secao-principal">
+    <!-- Overlay para fechar o menu ao clicar fora -->
+    <div class="overlay" id="overlay"></div>
+    
+    <!-- Menu Mobile -->
+    <div class="menu-mobile" id="menu-mobile">
+        <div class="menu-mobile-header">
+            <h5 class="menu-title">Menu</h5>
+            <button class="menu-close" id="menu-close">
+                <i class="lni lni-close"></i>
+            </button>
+        </div>
+        
+        <ul class="nav-list">
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                    <i class="lni lni-home"></i>
+                    <span>Início</span>
+                </a>
+            </li>
+            
+            <li class="nav-item">
+                <a href="#voluntarios" class="nav-link">
+                    <i class="lni lni-users"></i>
+                    <span>Voluntários</span>
+                </a>
+            </li>
+            
+            <li class="nav-item">
+                <a href="#blog" class="nav-link">
+                    <i class="lni lni-book"></i>
+                    <span>Blog</span>
+                </a>
+            </li>
+            
+            <!-- Dropdown no menu mobile -->
+            <li class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle" id="dropdown-toggle" aria-expanded="false">
+                    <div style="display: flex; align-items: center;">
+                        <i class="lni lni-grid-alt"></i>
+                        <span>Páginas</span>
+                    </div>
+                </a>
+                <div class="dropdown-menu" id="dropdown-menu">
+                    <a href="pages/DevTeam/index.html" class="dropdown-item">Equipe Dev</a>
+                    <a href="pages/Agendamentos/index.html" class="dropdown-item">Agendamento</a>
+                </div>
+            </li>
+            
+            <li class="nav-item">
+                <a href="#faq" class="nav-link">
+                    <i class="lni lni-question-circle"></i>
+                    <span>Faq</span>
+                </a>
+            </li>
+            
+            <li class="nav-item">
+                <a href="#contato" class="nav-link">
+                    <i class="lni lni-envelope"></i>
+                    <span>Contato</span>
+                </a>
+            </li>
+        </ul>
+        
+        <div class="container-botoes">
+            <a href="pages/Login-Signup/login.html" class="botao-login">LOGIN</a>
+            <a href="pages/Login-Signup/cadastro.html" class="botao-signup">SIGNUP</a>
+        </div>
+    </div>
 
+    <main>
+
+        <section class="secao-principal" id="topo">
             <div class="container">
                 <div class="row align-items-center">
+
+                    <!-- Coluna de texto à esquerda -->
                     <div class="col-lg-6">
-                        <h1>Encontre Suporte <br> Quando Você Mais Precisa</h1>
-                        <p>Conecte-se com profissionais de saúde mental e grupos de apoio que estão
-                            aqui para ajudá-lo em sua jornada para uma melhor saúde mental.</p>
+                        <h1>Bem-vindo à <span class="destaque">MentePositiva</span></h1>
+                        <p>Oferecemos suporte profissional para ajudar você a cuidar da sua saúde mental. Nossa equipe de especialistas está pronta para acompanhar sua jornada de autoconhecimento e bem-estar.</p>
+                        
                         <div class="botoes-principais">
-                            <a href="#voluntarios" class="btn btn-primary">Encontre Suporte</a>
-                            <a href="#cadastro-voluntario" class="btn btn-outline-primary">Torne-se um voluntário</a>
+                            <a href="pages/Agendamentos/index.html" class="btn btn-primary">
+                                <i class="lni lni-calendar"></i> Agendar Consulta
+                            </a>
+                            <a href="#voluntarios" class="btn btn-outline-primary">
+                                <i class="lni lni-users"></i> Conheça Nossa Equipe
+                            </a>
                         </div>
                     </div>
+                    
                     <div class="col-lg-6">
-                        <figure>
-                            <img src="images/Logo/Logo2.png" alt="Mental Health Support" class="img-fluid imagem-principal">
-                        </figure>
+                        <div class="imagem-simples">
+                            <img src="images/Logo/LOGO.png" alt="MentePositiva - Saúde Mental" class="img-fluid">
+                        </div>
                     </div>
                 </div>
             </div>
-        
         </section>
 
-        <!-- Bloco Voluntários -->
+
         <section id="voluntarios" class="bloco-voluntarios text-center">
             
             <div class="container">
@@ -252,7 +296,6 @@
 
         </section>
 
-        <!-- Bloco BloG  -->
         <article id="blog" class="Block_Blog">
             <div class="container">
                 <h2>Recursos de Saúde Mental</h2>
@@ -359,7 +402,7 @@
         
                                 <div class="author-info">
                                     <i class="fas fa-user-md type-icon"></i>
-                                    <span class="author-fullname">Dra. Emma Chen</span>
+                                    <span class="author-fullname">Dra. Maria Silva</span>
                                 </div>
         
                                 <div class="publication-date">
@@ -392,7 +435,7 @@
                                 
                                 <div class="author-info">
                                     <i class="fas fa-user-md type-icon"></i>
-                                    <span class="author-fullname">Dr. Michael Rodriguez</span>
+                                    <span class="author-fullname">Dra. Maria Silva</span>
                                 </div>
         
                                 <div class="publication-date">
@@ -425,7 +468,7 @@
         
                                 <div class="author-info">
                                     <i class="fas fa-user-md type-icon"></i>
-                                    <span class="author-fullname">Sarah Johnson, LMFT</span>
+                                    <span class="author-fullname">Dr. João Santos</span>
                                 </div>
         
                                 <div class="publication-date">
@@ -457,7 +500,7 @@
         
                                 <div class="author-info">
                                     <i class="fas fa-user-md type-icon"></i>
-                                    <span class="author-fullname">Dr. Alex Thompson</span>
+                                    <span class="author-fullname">Dr. João Santos</span>
                                 </div>
         
                                 <div class="publication-date">
@@ -488,7 +531,7 @@
                                 <div class="author-info">
         
                                     <i class="fas fa-user-md type-icon"></i>
-                                    <span class="author-fullname">Dr. Felipe Martins</span>
+                                    <span class="author-fullname">Dra. Ana Oliveira</span>
                                 </div>
         
                                 <div class="publication-date">
@@ -519,7 +562,7 @@
         
                                 <div class="author-info">
                                     <i class="fas fa-user-md type-icon"></i>
-                                    <span class="author-fullname">Dra. Laura Campos</span>
+                                    <span class="author-fullname">Dra. Ana Oliveira</span>
                                 </div>
         
                                 <div class="publication-date">
@@ -551,7 +594,6 @@
             </div>
         </article>
 
-        <!-- Bloco FAQ -->
         <section id="faq" class="Main_Block_faq">
             <div class="container">
                 <h2>Perguntas frequentes</h2>
@@ -744,7 +786,6 @@
             </div>
         </section>
 
-        <!-- Bloco Contato -->
         <section id="contato" class="secao-contato">
             <div class="container">
                 <h2 class="titulo-contato">Entre em contato</h2>
@@ -777,23 +818,22 @@
             </div>
         </section>
 
-        <!-- Rodapé -->
         <footer class="rodape">
             <div class="container rodape-conteudo py-5">
                 <div class="row">
-                    <!-- Logo e Descrição -->
+
                     <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
                         <h2 class="rodape-logo mb-3 text-start">MentePositiva</h2>
                         <p class="rodape-slogan text-start">Conectando apoio psicológico acessível a quem precisa.</p>
                         
                         <div class="d-flex mt-4 gap-3">
-                            <a href="#" class="social-link social-instagram">
+                            <a href="https://www.instagram.com/abrasme/" class="social-link social-instagram">
                                 <i class="fa-brands fa-instagram"></i>
                             </a>
-                            <a href="#" class="social-link social-facebook">
+                            <a href="https://www.facebook.com/saudementalabrasme/" class="social-link social-facebook">
                                 <i class="fa-brands fa-facebook-f"></i>
                             </a>
-                            <a href="#" class="social-link social-whatsapp">
+                            <a href="https://wa.me/5518996336663?text=Gostaria%20de%20agendar%20uma%20consulta" class="social-link social-whatsapp">
                                 <i class="fa-brands fa-whatsapp"></i>
                             </a>
                         </div>
@@ -804,22 +844,22 @@
                         <h3 class="rodape-titulo mb-3">Navegação</h3>
                         <ul class="list-unstyled mb-0">
                             <li class="mb-2">
-                                <a href="#" class="rodape-link">Início</a>
+                                <a href="#inicio" class="rodape-link secao-link" data-secao="inicio">Início</a>
                             </li>
                             <li class="mb-2">
-                                <a href="#" class="rodape-link">Voluntários</a>
+                                <a href="#voluntarios" class="rodape-link secao-link" data-secao="voluntarios">Voluntários</a>
                             </li>
                             <li class="mb-2">
-                                <a href="#" class="rodape-link">Blog</a>
+                                <a href="#blog" class="rodape-link secao-link" data-secao="blog">Blog</a>
                             </li>
                             <li class="mb-2">
-                                <a href="#" class="rodape-link">Agendamento</a>
+                                <a href="pages/Agendamentos/index.html" class="rodape-link secao-link"  data-secao="agendamento">Agendamento</a>
                             </li>
                             <li class="mb-2">
-                                <a href="#" class="rodape-link">FAQ</a>
+                                <a href="#faq" class="rodape-link secao-link" data-secao="faq">FAQ</a>
                             </li>
                             <li class="mb-2">
-                                <a href="#" class="rodape-link">Contato</a>
+                                <a href="#contato" class="rodape-link secao-link" data-secao="contato">Contato</a>
                             </li>
                         </ul>
                     </div>
@@ -832,7 +872,7 @@
                                 <a href="pages/PageBlogs/01-mindfulness.html" class="rodape-link">Mindfulness</a>
                             </li>
                             <li class="mb-2">
-                                <a href="pages/PageBlogs/02-deprecao.html" class="rodape-link">Depressão</a>
+                                <a href="pages/PageBlogs/02-depressao.html" class="rodape-link">Depressão</a>
                             </li>
                             <li class="mb-2">
                                 <a href="pages/PageBlogs/03-autocuidado.html" class="rodape-link">Auto-Cuidado</a>
@@ -841,10 +881,10 @@
                                 <a href="pages/PageBlogs/04-ataque.html" class="rodape-link">Ansiedade</a>
                             </li>
                             <li class="mb-2">
-                                <a href="pages/PageBlogs/05-comunicacao.html" class="rodape-link">Inteligência Emocional</a>
+                                <a href="pages/PageBlogs/05-inteligen-emoci.html" class="rodape-link">Inteligência Emocional</a>
                             </li>
                             <li class="mb-2">
-                                <a href="pages/PageBlogs/06-higiene.html" class="rodape-link">Saúde do Sono</a>
+                                <a href="pages/PageBlogs/06-Saude-sono.html" class="rodape-link">Saúde do Sono</a>
                             </li>
                         </ul>
                     </div>
@@ -886,13 +926,13 @@
         
     </main>
 
-    <!-- JavaScript Bootstrap -->
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Anime.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
 
-    <!-- JavaScript Personalizado -->
+    <script src="js/01-header.js"></script>
+    <script src="js/02-Bloco-1.js"></script>
     <script src="js/03-Volunteers.js"></script>
     <script src="js/05-Faq.js"></script>
 </body>

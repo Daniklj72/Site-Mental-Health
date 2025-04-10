@@ -1,11 +1,9 @@
-
-/* Bloco Geral de Voluntários - Cria um fundo gradiente escuro para a seção de voluntários */
 .bloco-voluntarios {
     background: linear-gradient(to bottom right, #232F3E, #37475A);
-    padding: 4rem 0;
+    padding: 80px 0;
+    color: #ecf0f1;
+    position: relative;
 }
-
-/* Título estilizado com transformação de texto maiúsculo e espaçamento de letra para destaque */
 .titulo-voluntarios {
     color: #ffffff;
     font-weight: 600;
@@ -13,16 +11,12 @@
     text-transform: uppercase;
     letter-spacing: 1.5px;
 }
-
-/* Container flexível que centraliza e organiza os cartões de profissionais */
 .cartoes-profissionais {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     gap: 1rem;
 }
-
-/* Cartão do profissional com design moderno e efeito de profundidade */
 .cartao-profissional {
     background-color: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.125);
@@ -37,14 +31,10 @@
     display: flex;
     flex-direction: column;
 }
-
-/* Efeito de hover eleva o cartão e aumenta a sombra para dar profundidade */
 .cartao-profissional:hover {
     transform: translateY(-10px);
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
 }
-
-/* Imagem do profissional com filtro sutil e transição suave de escala */
 .cartao-imagem {
     height: 300px;
     width: 100%;
@@ -53,12 +43,11 @@
     transition: transform 0.4s ease;
 }
 
-/* Zoom sutil na imagem durante hover para dar mais dinamismo */
+/* Zoom na imagem */
 .cartao-profissional:hover .cartao-imagem {
     transform: scale(1.05);
 }
 
-/* Corpo do cartão com layout flexível para conteúdo consistente */
 .cartao-corpo {
     background-color: rgba(0, 0, 0, 0.1);
     padding: 1.5rem;
@@ -67,25 +56,20 @@
     flex-direction: column;
 }
 
-/* Nome do profissional em destaque com cor azul clara */
 .cartao-nome {
     color: #4DB8FF;
     font-weight: 600;
 }
-
-/* Estilização da especialidade com cor suave e destaque */
 .cartao-especialidade {
     color: #B0C4DE;
     font-weight: bold;
 }
-
-/* Descrição com cor neutra e flexibilidade de crescimento */
 .cartao-descricao {
     color: #B0C4DE;
     flex-grow: 1;
 }
 
-/* Botão "Saiba Mais" com design translúcido e efeito de hover dinâmico */
+/* Botão "Saiba Mais" */
 .btn-saiba-mais {
     background-color: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.7);
@@ -105,7 +89,7 @@
     border-color: #3D81EB;
 }
 
-/* Estilos para Modal de Detalhes */
+/* Janela com detalhes dos proficionais*/
 .modal-detalhes-profissionais {
     display: none;
     position: fixed;
@@ -116,69 +100,37 @@
     height: 100%;
     overflow: auto;
 }
-/* Fundo desfocado que cobre toda a tela quando o modal está ativo */
+/* Fundo desfocado */
 .overlay-background {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparência escura */
-    backdrop-filter: blur(5px); /* Efeito de desfoque sutil no fundo */
+    background-color: rgba(0, 0, 0, 0.5); 
+    backdrop-filter: blur(5px); 
 }
 
-/* Container que centraliza o modal vertical e horizontalmente */
 .modal-container {
     position: relative;
     display: flex;
-    justify-content: center; /* Centralização horizontal */
-    align-items: center; /* Centralização vertical */
+    justify-content: center; 
+    align-items: center;
     height: 100%;
-    z-index: 1001; /* Garante que fique acima de outros elementos */
+    z-index: 1001;
 }
-
-/* Conteúdo principal do modal com design moderno e gradiente */
 .modal-content {
-    background: linear-gradient(135deg, #232F3E, #37475A); /* Gradiente de fundo */
-    border-radius: 15px; /* Bordas arredondadas */
+    background: linear-gradient(135deg, #232F3E, #37475A); 
+    border-radius: 15px; 
     width: 90%;
     max-width: 700px;
     padding: 30px;
     position: relative;
-    border: 1px solid rgba(255, 255, 255, 0.1); /* Borda sutil */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Sombra para profundidade */
+    border: 1px solid rgba(255, 255, 255, 0.1); 
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); 
     color: white;
-    overflow: hidden; /* Esconde elementos que ultrapassam o container */
-}
-
-/* Pseudo-elemento para criar animação de rotação de gradiente */
-.modal-content::before {
-    content: '';
-    position: absolute;
-    top: -50%; /* Posicionamento fora dos limites */
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: conic-gradient( /* Gradiente cônico para efeito animado */
-        transparent,
-        transparent,
-        transparent,
-        #4DB8FF
-    );
-    animation: rotate 4s linear infinite; /* Animação de rotação constante */
-    z-index: -1; /* Posiciona atrás do conteúdo */
-}
-
-/* Pseudo-elemento para criar uma camada de fundo interna */
-.modal-content::after {
-    content: '';
-    position: absolute;
-    inset: 2px; /* Preenche quase todo o espaço do modal */
-    background: linear-gradient(135deg, #232F3E, #37475A);
-    border-radius: 13px;
-    z-index: -1;
+    overflow: hidden;
 }
 
 
-/* Botão de fechar o modal com design moderno */
 .modal-fechar {
     position: absolute;
     top: 10px;
@@ -194,14 +146,10 @@
     cursor: pointer;
     transition: all 0.3s ease; /* Transição suave para efeitos de hover */
 }
-
-/* Efeito de hover para o botão de fechar */
 .modal-fechar:hover {
     background: #4DB8FF;
     color: #232F3E;
 }
-
-/* Cabeçalho do modal com layout flexível */
 .modal-header {
     display: flex;
     align-items: center;
@@ -209,48 +157,35 @@
     margin-left: 0px;
     margin-right: 40px;
 }
-
-/* Container do avatar com margem para separação */
 .avatar-container {
     margin-right: 20px;
 }
-
-/* Estilização do avatar do profissional */
+/* Estilização do profissional */
 .profissional-avatar {
     width: 80px;
     height: 80px;
-    border-radius: 50%; /* Formato circular */
-    object-fit: cover; /* Mantém a proporção da imagem */
-    border: 3px solid #4DB8FF; /* Borda de destaque */
+    border-radius: 50%; 
+    object-fit: cover; 
+    border: 3px solid #4DB8FF;
 }
-
-/* Estilização do nome do profissional no cabeçalho */
 .header-texto .nome-profissional {
     color: #4DB8FF;
     margin-bottom: 5px;
 }
-
-/* Estilização da especialidade no cabeçalho */
 .header-texto .especialidade-profissional {
     color: #B0C4DE;
     opacity: 0.8;
 }
-
-/* Seções de detalhes dentro do modal */
 .secao-detalhes {
-    background: rgba(255, 255, 255, 0.05); /* Fundo semi-transparente */
+    background: rgba(255, 255, 255, 0.05);
     border-radius: 10px;
     padding: 15px;
     margin-bottom: 15px;
 }
-
-/* Títulos das seções de detalhes */
 .secao-detalhes h4 {
     color: #4DB8FF;
     margin-bottom: 10px;
 }
-
-/* Parágrafos das seções de detalhes */
 .secao-detalhes p {
     color: #B0C4DE;
 }

@@ -5,6 +5,28 @@ body {
     background-color: #2C3E50; 
     color: #ecf0f1;
 }
+.cabecalho {
+    background: rgba(35, 47, 62, 0.95);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+.logotipo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #fff;
+    text-decoration: none;
+}
+.logotipo:hover {
+    color: #fff;
+}
+.logotipo span {
+    background: linear-gradient(90deg, #3498db, #1abc9c);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
 
 
 .secao-equipe {
@@ -39,7 +61,6 @@ body {
 }
 
 
-/* ================ IMAGEM DO MEMBRO ================ */
 .container-imagem {
     position: relative;
     width: 100%;
@@ -78,7 +99,6 @@ body {
 }
 
 
-/* ================ CONTEÚDO DO CARTÃO ================ */
 .conteudo-membro {
     padding: 1.8rem;
     flex: 1;
@@ -132,13 +152,20 @@ body {
     color: #fff;
 }
 
-/* ================ RESPONSIVIDADE ================ */
+
 @media (max-width: 991px) {
     .container-imagem {
         padding-top: 66.67%;
     }
 }
 @media (max-width: 767px) {
+    .logotipo {
+        font-size: 1.5rem;
+    }
+    .botao-inicio {
+        font-size: 0.85rem;
+        padding: 0.5rem 1rem;
+    }
     .nome-membro {
         font-size: 1.3rem;
     }
