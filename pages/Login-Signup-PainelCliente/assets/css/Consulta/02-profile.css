@@ -1,0 +1,333 @@
+/* 02-profile.css */
+.profile-section {
+    padding: 60px 0 40px;
+}
+
+/* Cartão de Perfil */
+.profile-card {
+    background-color: var(--light-color);
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin-bottom: 30px;
+    height: 100%;
+}
+
+.profile-header {
+    background-color: var(--primary-color);
+    padding: 30px 20px;
+    text-align: center;
+    color: var(--light-color);
+    position: relative;
+}
+
+.profile-img-container {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 15px;
+}
+
+.profile-img-placeholder {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    position: relative;
+    overflow: hidden;
+    font-size: 40px;
+    font-weight: bold;
+    color: white;
+}
+
+.profile-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    display: none; /* Inicialmente oculto, será mostrado quando fizer upload */
+}
+
+.edit-img {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: var(--light-color);
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+}
+
+.edit-img i {
+    color: var(--primary-color);
+    font-size: 16px;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.profile-email {
+    margin-bottom: 0;
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+.profile-body {
+    padding: 20px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.info-item i {
+    width: 30px;
+    color: var(--primary-color);
+}
+
+.profile-footer {
+    padding: 0 20px 20px;
+    text-align: center;
+}
+
+.edit-profile-btn {
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    border: none;
+    padding: 8px 25px;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.edit-profile-btn:hover {
+    background-color: #e04141;
+    color: var(--light-color);
+}
+
+/* Próximas Consultas */
+.upcoming-appointments {
+    background-color: var(--light-color);
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.upcoming-appointments h3 {
+    margin-bottom: 20px;
+    font-size: 20px;
+    color: var(--dark-color);
+}
+
+.no-appointments {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 20px;
+    color: #777;
+}
+
+.no-appointments i {
+    font-size: 48px;
+    color: var(--border-color);
+    margin-bottom: 20px;
+}
+
+.no-appointments h4 {
+    color: #999;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.no-appointments p {
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.schedule-btn {
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    border: none;
+    padding: 10px 25px;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: background-color 0.3s;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.schedule-btn:hover {
+    background-color: #e04141;
+    color: var(--light-color);
+}
+
+.appointment-card {
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 15px;
+    background-color: var(--gray-color);
+    transition: transform 0.3s;
+}
+
+.appointment-card:hover {
+    transform: scale(1.01);
+}
+
+.appointment-img {
+    width: 60px;
+    height: 60px;
+    margin-right: 15px;
+    position: relative;
+}
+
+.appointment-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid var(--primary-color);
+}
+
+.appointment-img img[src=""], .appointment-img img:not([src]) {
+    opacity: 0;
+}
+
+.appointment-img img[src=""] + .appointment-initials,
+.appointment-img img:not([src]) + .appointment-initials {
+    display: flex;
+}
+
+.appointment-initials {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: rgba(249, 89, 89, 0.1);
+    color: var(--primary-color);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.appointment-info {
+    flex: 1;
+}
+
+.appointment-info h4 {
+    margin-bottom: 3px;
+    font-size: 16px;
+}
+
+.appointment-info p {
+    margin-bottom: 5px;
+    color: #777;
+    font-size: 14px;
+}
+
+.appointment-date {
+    font-size: 13px;
+    color: var(--info-color);
+}
+
+.appointment-date i {
+    margin-right: 3px;
+}
+
+.appointment-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.reschedule-btn, .cancel-btn {
+    font-size: 12px;
+    font-weight: 600;
+    padding: 5px 12px;
+    border-radius: 50px;
+}
+
+.reschedule-btn {
+    background-color: var(--info-color);
+    color: var(--light-color);
+    border: none;
+}
+
+.reschedule-btn:hover {
+    background-color: #138496;
+    color: var(--light-color);
+}
+
+.cancel-btn {
+    background-color: transparent;
+    color: var(--danger-color);
+    border: 1px solid var(--danger-color);
+}
+
+.cancel-btn:hover {
+    background-color: var(--danger-color);
+    color: var(--light-color);
+}
+
+/* Responsividade para o perfil */
+@media (max-width: 767px) {
+    .appointment-actions {
+        margin-top: 15px;
+        flex-direction: row;
+        width: 100%;
+    }
+    
+    .appointment-card {
+        flex-wrap: wrap;
+    }
+    
+    /* Remove altura fixa em telas pequenas */
+    .profile-card,
+    .upcoming-appointments {
+        height: auto;
+    }
+}
+
+@media (max-width: 575px) {
+    .appointment-img {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .appointment-info h4 {
+        font-size: 15px;
+    }
+    
+    .stat-value {
+        font-size: 28px;
+    }
+    
+    .stat-label {
+        font-size: 13px;
+    }
+}

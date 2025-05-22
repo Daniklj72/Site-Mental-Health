@@ -5,13 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Minha Conta</title>
 
-    <link rel="stylesheet" href="/pages/Painel-cliente/style.css">
+    <link rel="stylesheet" href="assets/css/Painel-cliente.css">
 </head>
 <body>
     <header>
         <div class="container">
             <div class="header-content logotipo">
-                <div class="logo"><a href="/Main-index.html" style="text-decoration: none; color: inherit; cursor: pointer;"><h1>Mente<span>Positiva</span></h1></a></div>
+                <div class="logo"><a href="/Main-index.html" style="text-decoration: none; color: inherit; cursor: pointer;">
+                    <h1>Mente<span>Positiva</span></h1></a>
+                </div>
             </div>
         </div>
     </header>
@@ -22,7 +24,7 @@
         <div class="account-options">
 
             <!-- Primeira linha-->
-            <div class="option-card" onclick="window.location.href='meu-cadastro.html'">
+            <div class="option-card" onclick="window.location.href='06-cadastro.html'">
                 <div class="option-icon icon-profile"></div>
                 <h3 class="option-title">Meu cadastro</h3>
             </div>
@@ -45,7 +47,7 @@
                 <h3 class="option-title">Meu Endereço</h3>
             </div>
 
-            <div class="option-card" onclick="window.location.href='consulta.html'">
+            <div class="option-card" onclick="window.location.href='05-consulta.html'">
                 <div class="option-icon icon-consulta"></div>
                 <h3 class="option-title">Consulta</h3>
             </div>
@@ -58,10 +60,25 @@
     </main>
     
     <script>
+        // Verificar se o usuário está logado ao carregar a página
+        document.addEventListener('DOMContentLoaded', function() {
+            const isLoggedIn = localStorage.getItem('loggedIn');
+            const userEmail = localStorage.getItem('userEmail');
+            
+            if (!isLoggedIn || isLoggedIn !== 'true') {
+                // Se não estiver logado, redireciona para a página de login
+                window.location.href = 'index.html';
+            }
+        });
+        
         function logout() {
-
             if(confirm('Tem certeza que deseja sair?')) {
-                // ...
+                // Limpar as informações de login do localStorage
+                localStorage.removeItem('loggedIn');
+                localStorage.removeItem('userEmail');
+                
+                // Redirecionar para a página de login
+                window.location.href = 'index.html';
             }
         }
     </script>

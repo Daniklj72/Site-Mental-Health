@@ -1,0 +1,61 @@
+/* 00-main.css */
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,700|Montserrat:400,600');
+
+:root {
+    --primary-color: #f95959;
+    --secondary-color: #f7edd5;
+    --light-color: #ffffff;
+    --dark-color: #333333;
+    --gray-color: #f8f9fa;
+    --text-color: #444;
+    --border-color: #e6e6e6;
+    --success-color: #28a745;
+    --danger-color: #dc3545;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f5f5f5;
+    color: var(--cor-texto);
+    margin: 0;
+    padding: 0;
+}
+.container-principal {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+}
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+a:hover {
+    color: #e04141;
+}
+.titulo-secao {
+    text-align: center;
+    margin-bottom: 10px;
+    color: var(--dark-color);
+}
+.descricao-secao {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #777;
+}
+@media (max-width: 991px) {
+    .nav-link {
+        margin: 5px 0;
+    }
+}
+@media (max-width: 575px) {
+    .profile-section {
+        padding: 40px 0 20px;
+    }
+    .book-appointment {
+        padding: 40px 0;
+    }
+}
