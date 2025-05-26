@@ -1,0 +1,111 @@
+:root {
+    --primary-color: #f95959;
+    --secondary-color: #f7edd5;
+    --light-color: #ffffff;
+    --dark-color: #333333;
+    --gray-color: #f8f9fa;
+    --text-color: #444;
+    --border-color: #e6e6e6;
+    --success-color: #28a745;
+    --danger-color: #dc3545;
+}
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f5f5f5;
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+}
+header {
+    background-color: #f0f0f0; 
+    border-bottom: 1px solid #e0e0e0; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); 
+    position: relative;
+    z-index: 100;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+}
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+a:hover {
+    color: #e04141;
+}
+
+
+.barra-navegacao {
+    padding: 15px 0;
+}
+.conteudo-cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logotipo {
+    display: flex;
+    align-items: center;
+}
+.logotipo h1 {
+    font-size: 1.8rem;
+    margin: 0;
+    padding: 0;
+    white-space: nowrap;
+    color: var(--dark-color);
+}
+.logotipo span {
+    background: linear-gradient(90deg, #3498db, #1abc9c);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.link-menu {
+    font-weight: 600;
+    color: var(--dark-color);
+    margin: 0 10px;
+    transition: color 0.3s;
+    padding: 8px 15px;
+}
+.link-menu:hover, 
+.link-menu.ativo {
+    background: linear-gradient(90deg, #3498db, #1abc9c);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.3s ease;
+}
+
+
+
+/* demonstração da pagina */
+.demo-content {
+    padding: 60px 0;
+    text-align: center;
+}
+.demo-content h2 {
+    color: var(--dark-color);
+    margin-bottom: 20px;
+}
+.demo-content p {
+    color: #777;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+
+@media (max-width: 991px) {
+    .link-menu {
+        margin: 5px 0;
+        padding: 8px 0;
+    }
+    .menu-itens {
+        margin-top: 15px;
+    }
+}
+@media (max-width: 576px) {
+    .logotipo h1 {
+        font-size: 1.5rem;
+    }
+}

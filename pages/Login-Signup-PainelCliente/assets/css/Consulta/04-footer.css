@@ -1,0 +1,76 @@
+/* Footer Styles */
+footer {
+    background-color: var(--dark-color);
+    color: #bbb;
+    padding: 50px 0 20px;
+    margin-top: auto;
+}
+
+footer h4 {
+    color: var(--light-color);
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+footer h4 span {
+    color: var(--primary-color);
+}
+
+.social-icons {
+    margin-top: 20px;
+}
+
+.social-icons a {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--light-color);
+    border-radius: 50%;
+    text-align: center;
+    line-height: 35px;
+    margin-right: 10px;
+    transition: background-color 0.3s;
+}
+
+.social-icons a:hover {
+    background-color: var(--primary-color);
+    color: var(--light-color);
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: #bbb;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: var(--primary-color);
+}
+
+footer p {
+    margin-bottom: 10px;
+}
+
+footer i {
+    width: 20px;
+    margin-right: 5px;
+    color: var(--primary-color);
+}
+
+.copyright {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: #777;
+}

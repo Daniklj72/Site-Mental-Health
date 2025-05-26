@@ -1,0 +1,299 @@
+/* ===== VARIÁVEIS DE CORES ===== */
+:root {
+    --primary-color: #3498db;
+    --primary-gradient: linear-gradient(90deg, #3498db, #1abc9c);
+    --secondary-color: #1abc9c;
+    --secondary-gradient: linear-gradient(135deg, #2980b9 0%, #27ae60 100%);
+    --success-color: #27ae60;
+    --warning-color: #f39c12;
+    --danger-color: #e74c3c;
+    --light-bg: #1e2832;
+    --white: #2c3e50;
+    --dark: #34495e;
+    --gray-100: #2c3e50;
+    --gray-200: #34495e;
+    --gray-300: #475569;
+    --gray-500: #64748b;
+    --gray-700: #94a3b8;
+    --gray-900: #f1f5f9;
+    --text-primary: #ecf0f1;
+    --text-secondary: #bdc3c7;
+    --border-radius: 16px;
+    --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.3), 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+}
+
+/* ===== RESET E CONFIGURAÇÕES BÁSICAS ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 50%, #2980b9 100%);
+    color: var(--text-primary);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+/* ===== CABEÇALHO ===== */
+.cabecalho {
+    background: rgba(44, 62, 80, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--gray-300);
+    box-shadow: var(--shadow-md);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.conteudo-cabecalho {
+    padding: 1rem 0;
+}
+
+.logotipo {
+    display: flex;
+    align-items: center;
+}
+
+.logotipo h1 {
+    font-size: 1.5rem;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+/* ===== CONTAINER PRINCIPAL ===== */
+.container-principal {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 1rem 2rem;
+}
+
+/* ===== CABEÇALHO DA PÁGINA ===== */
+.cabecalho-pagina {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.titulo-pagina {
+    font-size: 2.5rem;
+    font-weight: 700;
+    background: #ffffff;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0.5rem;
+}
+
+.subtitulo-pagina {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    font-weight: 400;
+}
+
+/* ===== GRADE DE CONTA ===== */
+.grade-conta {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+/* ===== CARTÃO DE CONTA ===== */
+.cartao-conta {
+    background: rgba(44, 62, 80, 0.8);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--gray-300);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    min-height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    backdrop-filter: blur(10px);
+}
+
+.cartao-conta:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl);
+    border-color: var(--primary-color);
+}
+
+/* ===== ÍCONE DO CARTÃO ===== */
+.icone-cartao {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 1.5rem;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    color: var(--white);
+    transition: all 0.3s ease;
+    background-color: #ffffff;
+    color: #2c3e50;
+}
+
+/* ===== TÍTULO E DESCRIÇÃO DO CARTÃO ===== */
+.titulo-cartao {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.descricao-cartao {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.4;
+}
+
+/* ===== ÍCONES ESPECÍFICOS ===== */
+.icone-perfil {
+    background-color: #ffffff;
+    color: #3498db;
+}
+
+.icone-senha {
+    background-color: #ffffff;
+    color: #1abc9c;
+}
+
+.icone-profissionais {
+    background-color: #ffffff;
+    color: #3498db;
+}
+
+.icone-endereco {
+    background-color: #ffffff;
+    color: #27ae60;
+}
+
+.icone-consulta {
+    background-color: #ffffff;
+    color: #2980b9;
+}
+
+.icone-sair {
+    background-color: #ffffff;
+    color: black;
+}
+
+/* ===== BADGE DE NOTIFICAÇÃO ===== */
+.badge-notificacao {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: #ffffff;
+    color: black;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: 600;
+    box-shadow: var(--shadow-md);
+    animation: pulsar 2s infinite;
+}
+
+/* ===== ANIMAÇÕES ===== */
+@keyframes pulsar {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Efeito hover para ícones */
+.cartao-conta:hover .icone-cartao {
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* Animação de entrada dos cartões */
+.cartao-conta {
+    animation: surgirDeAbaixo 0.6s ease forwards;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.cartao-conta:nth-child(1) { animation-delay: 0.1s; }
+.cartao-conta:nth-child(2) { animation-delay: 0.2s; }
+.cartao-conta:nth-child(3) { animation-delay: 0.3s; }
+.cartao-conta:nth-child(4) { animation-delay: 0.4s; }
+.cartao-conta:nth-child(5) { animation-delay: 0.5s; }
+.cartao-conta:nth-child(6) { animation-delay: 0.6s; }
+
+@keyframes surgirDeAbaixo {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 768px) {
+    .container-principal {
+        padding: 2rem 1rem;
+    }
+
+    .titulo-pagina {
+        font-size: 2rem;
+    }
+
+    .grade-conta {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .cartao-conta {
+        padding: 1.5rem;
+        min-height: 160px;
+    }
+
+    .logotipo h1 {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .titulo-pagina {
+        font-size: 1.8rem;
+    }
+
+    .cartao-conta {
+        padding: 1.25rem;
+        min-height: 140px;
+    }
+
+    .icone-cartao {
+        width: 56px;
+        height: 56px;
+        font-size: 1.6rem;
+    }
+}

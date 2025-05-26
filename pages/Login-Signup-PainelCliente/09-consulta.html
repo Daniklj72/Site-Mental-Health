@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Perfil do Cliente</title>
+    
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,700|Montserrat:400,600" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="assets/css/Consulta/01-header.css">
+    <link rel="stylesheet" href="assets/css/Consulta/02-profile.css">
+    <link rel="stylesheet" href="assets/css/Consulta/03-marcar-consulta.css">
+    <link rel="stylesheet" href="assets/css/Consulta/04-footer.css">
+
+</head>
+<body>
+    
+    <div class="container-principal">
+       <header>
+            <nav class="barra-navegacao navbar navbar-expand-lg">
+                <div class="container">
+
+                    <div class="logotipo">
+                        <div class="logo">
+                            <a href="/Main-index.html" style="text-decoration: none; color: inherit; cursor: pointer;">
+                                <h1>Mente<span>Positiva</span></h1>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="menu-itens navbar-nav ms-auto">
+
+                            <li class="item-menu nav-item">
+                                <a class="link-menu nav-link" href="04-Painel-cliente.html">Painel de Cliente</a>
+                            </li>
+                            
+                            <li class="item-menu nav-item">
+                                <a class="link-menu nav-link" href="/Site-Mental-Health/Main-index.html">Sair</a><!--Seria deslogar -->
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Seção de Perfil do Usuário -->
+        <section class="profile-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+
+                        <div class="profile-card">
+                            <div class="profile-header">
+                                <div class="profile-img-container">
+                                    <div class="profile-img-placeholder">
+                                        JS
+                                    </div>
+                                    <div class="edit-img">
+                                        <label for="img-upload">
+                                            <i class="fas fa-camera"></i>
+                                        </label>
+                                        <input type="file" id="img-upload" accept="image/*">
+                                    </div>
+                                </div>
+                                <h3 class="profile-name">João Silva</h3>
+                                <p class="profile-email">joao.silva@email.com</p>
+                            </div>
+                            <div class="profile-body">
+                                <div class="info-item">
+                                    <i class="fas fa-phone"></i>
+                                    <span>(11) 98765-4321</span>
+                                </div>
+                                <div class="info-item">
+                                    <i class="fas fa-calendar"></i>
+                                    <span>15/05/1990</span>
+                                </div>
+                                <div class="info-item">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>São Paulo, SP</span>
+                                </div>
+                            </div>
+                            <div class="profile-footer">
+                                <button class="btn edit-profile-btn">Editar Perfil</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+        </section>
+
+        <!-- Book Appointment Section -->
+        <section id="marcar-consulta" class="book-appointment">
+            <div class="container">
+                <h2 class="titulo-secao">Marcar Nova Consulta</h2>
+                <p class="descricao-secao">Escolha um dos nossos especialistas para sua próxima consulta</p>
+                
+                <div class="filters">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <select class="form-select" id="specialty">
+                                <option value="">Todas Especialidades</option>
+                                <option value="psicóloga">Psicologia</option>
+                                <option value="fisioterapeuta">Fisioterapia</option>
+                                <option value="nutricionista">Nutrição</option>
+                                <option value="cardiologista">Cardiologia</option>
+                                <option value="dermatologista">Dermatologia</option>
+                                <option value="ortopedista">Ortopedia</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <select class="form-select" id="availability">
+                                <option value="">Qualquer Disponibilidade</option>
+                                <option value="today">Hoje</option>
+                                <option value="week">Esta Semana</option>
+                                <option value="month">Este Mês</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <button class="btn btn-secondary clear-filters" type="button">Limpar Filtros</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="professionals">
+                    <div class="row">
+
+                        <!-- Professional 1 -->
+                        <div class="col-md-4">
+                            <div class="professional-card">
+                                <div class="professional-image">
+                                    <img src="/images/Volunteers/Psicóloga_ Dra.Maria Silva.jpg" alt="Dra. Ana Martins">
+                                    <span class="rating"><i class="fas fa-star"></i> 4.9</span>
+                                </div>
+                                <div class="professional-info">
+                                    <h4>Dra. Ana Martins</h4>
+                                    <p class="specialty">Psicóloga</p>
+                                    <p class="experience"><i class="fas fa-briefcase me-2"></i>8 anos de experiência</p>
+                                    <div class="next-availability">
+                                        <i class="far fa-clock me-2"></i>Próx. disponível: Hoje
+                                    </div>
+                                    <div class="actions">
+                                        <button class="btn book-btn" data-bs-toggle="modal" data-bs-target="#bookingModal" data-professional="Dra. Ana Martins" data-specialty="Psicóloga">Marcar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                         <!-- Professional 2 -->
+                        <div class="col-md-4">
+                            <div class="professional-card">
+                                <div class="professional-image">
+                                    <img src="/images/Volunteers/Psicóloga_ Dra.Maria Silva.jpg" alt="Dr. Carlos Santos">
+                                    <span class="rating"><i class="fas fa-star"></i> 4.7</span>
+                                </div>
+                                <div class="professional-info">
+                                    <h4>Dr. Carlos Santos</h4>
+                                    <p class="specialty">Fisioterapeuta</p>
+                                    <p class="experience"><i class="fas fa-briefcase me-2"></i>5 anos de experiência</p>
+                                    <div class="next-availability">
+                                        <i class="far fa-clock me-2"></i>Próx. disponível: Amanhã
+                                    </div>
+                                    <div class="actions">
+                                        
+                                        <button class="btn book-btn" data-bs-toggle="modal" data-bs-target="#bookingModal" data-professional="Dr. Carlos Santos" data-specialty="Fisioterapeuta">Marcar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                       
+                        <!-- Professional 3 -->
+                    
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Booking Modal -->
+        <div class="modal fade" id="bookingModal" tabindex="-1" aria-labelledby="bookingModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="bookingModalLabel">Agendar Consulta</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="booking-professional-info">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="modal-doctor-icon" style="display: flex; align-items: center; justify-content: center; width: 100px; height: 100px; background-color: #f8f9fa; border-radius: 50%; border: 2px solid #007bff;">
+                                        <i class="fas fa-user-md" style="color: #007bff; font-size: 40px;"></i>
+                                    </div>
+                                </div>
+                                <div class="col-md-9">
+                                    <h4 id="modal-doctor-name">Nome do Profissional</h4>
+                                    <p id="modal-doctor-specialty">Especialidade</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="booking-form mt-4">
+                            <div class="form-group mb-3">
+                                <label for="appointment-type" class="form-label">Tipo de Consulta</label>
+                                <select class="form-select" id="appointment-type">
+                                    <option value="online">Consulta Online</option>
+                                    <option value="presencial">Consulta Presencial</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group mb-3">
+                                <label class="form-label">Selecione a Data</label>
+                                <div class="date-selector d-flex flex-wrap">
+                                    <div class="date-option selected">
+                                        <span class="day">Seg</span>
+                                        <span class="date">12</span>
+                                        <span class="month">Mai</span>
+                                    </div>
+                                    <div class="date-option">
+                                        <span class="day">Ter</span>
+                                        <span class="date">13</span>
+                                        <span class="month">Mai</span>
+                                    </div>
+                                    <div class="date-option">
+                                        <span class="day">Qua</span>
+                                        <span class="date">14</span>
+                                        <span class="month">Mai</span>
+                                    </div>
+                                    <div class="date-option">
+                                        <span class="day">Qui</span>
+                                        <span class="date">15</span>
+                                        <span class="month">Mai</span>
+                                    </div>
+                                    <div class="date-option">
+                                        <span class="day">Sex</span>
+                                        <span class="date">16</span>
+                                        <span class="month">Mai</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group mb-3">
+                                <label class="form-label">Selecione o Horário</label>
+                                <div class="time-selector d-flex flex-wrap">
+                                    <div class="time-option">09:00</div>
+                                    <div class="time-option">10:30</div>
+                                    <div class="time-option selected">14:00</div>
+                                    <div class="time-option">15:30</div>
+                                    <div class="time-option">17:00</div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group mb-3">
+                                <label for="appointment-reason" class="form-label">Motivo da Consulta</label>
+                                <textarea class="form-control" id="appointment-reason" rows="3" placeholder="Descreva brevemente o motivo da sua consulta"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn cancel-btn" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="button" class="btn confirm-btn" id="confirm-booking">Confirmar Agendamento</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Booking Confirmation Modal -->
+        <div class="modal fade" id="confirmationModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-body text-center p-5">
+                        <div class="success-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <h3>Agendamento Confirmado!</h3>
+                        <p>Sua consulta foi agendada com sucesso.</p>
+                        <p><strong>Profissional:</strong> <span id="conf-doctor-name"></span></p>
+                        <p><strong>Data:</strong> <span id="conf-date"></span></p>
+                        <p><strong>Horário:</strong> <span id="conf-time"></span></p>
+                        <button type="button" class="btn confirm-btn mt-3" data-bs-dismiss="modal">Fechar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/consulta.js"></script>
+</body>
+</html>
