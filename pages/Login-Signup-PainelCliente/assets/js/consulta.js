@@ -1,25 +1,25 @@
 const profissionais = [
     {
         id: 1,
-        nome: 'Dr. João Santos',
+        nome: 'Dra. Ana Silva',
         especialidade: 'Psicologia',
-        experiencia: '8 anos de experiência',
-        avaliacao: 4.9,
+        experiencia: '15 anos de experiência',
+        avaliacao: 4.8,
         disponibilidade: 'Hoje',
         disponibilidadeTipo: 'hoje',
         cor: 'azul',
-        foto: '/images/Volunteers/Psiquiatra_Dr.JoãoSantos.jpg'
+        foto: '/img-medicos/1.png'
     },
     {
         id: 2,
-        nome: 'Dra. Ana Oliveira',
+        nome: 'Dr. Carlos Santos',
         especialidade: 'Fisioterapia',
         experiencia: '5 anos de experiência',
-        avaliacao: 4.7,
+        avaliacao: 4.9,
         disponibilidade: 'Amanhã',
         disponibilidadeTipo: 'amanha',
         cor: 'verde',
-        foto: '/images/Volunteers/Terapeuta_Dra.AnaOliveira.jpg'
+        foto: '/img-medicos/2.png'
     },
     {
         id: 3,
