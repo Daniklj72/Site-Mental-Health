@@ -1,35 +1,36 @@
-
-// Dados dos profissionais
 const profissionais = [
     {
         id: 1,
-        nome: 'Dra. Ana Martins',
+        nome: 'Dr. João Santos',
         especialidade: 'Psicologia',
         experiencia: '8 anos de experiência',
         avaliacao: 4.9,
         disponibilidade: 'Hoje',
         disponibilidadeTipo: 'hoje',
-        cor: 'azul'
+        cor: 'azul',
+        foto: '/images/Volunteers/Psiquiatra_Dr.JoãoSantos.jpg'
     },
     {
         id: 2,
-        nome: 'Dr. Carlos Santos',
+        nome: 'Dra. Ana Oliveira',
         especialidade: 'Fisioterapia',
         experiencia: '5 anos de experiência',
         avaliacao: 4.7,
         disponibilidade: 'Amanhã',
         disponibilidadeTipo: 'amanha',
-        cor: 'verde'
+        cor: 'verde',
+        foto: '/images/Volunteers/Terapeuta_Dra.AnaOliveira.jpg'
     },
     {
         id: 3,
-        nome: 'Dra. Lucia Oliveira',
+        nome: 'Dra. Maria Silva',
         especialidade: 'Nutrição',
         experiencia: '6 anos de experiência',
         avaliacao: 4.8,
         disponibilidade: 'Esta Semana',
         disponibilidadeTipo: 'semana',
-        cor: 'roxo'
+        cor: 'roxo',
+        foto: '/images/Volunteers/Psicóloga_ Dra.Maria Silva.jpg'
     },
     {
         id: 4,
@@ -39,7 +40,8 @@ const profissionais = [
         avaliacao: 4.9,
         disponibilidade: 'Hoje',
         disponibilidadeTipo: 'hoje',
-        cor: 'azul'
+        cor: 'azul',
+        foto: '' // caminho para a foto
     },
     {
         id: 5,
@@ -49,7 +51,8 @@ const profissionais = [
         avaliacao: 4.6,
         disponibilidade: 'Esta Semana',
         disponibilidadeTipo: 'semana',
-        cor: 'verde'
+        cor: 'verde',
+        foto: '' // caminho para a foto
     },
     {
         id: 6,
@@ -59,11 +62,11 @@ const profissionais = [
         avaliacao: 4.5,
         disponibilidade: 'Amanhã',
         disponibilidadeTipo: 'amanha',
-        cor: 'roxo'
+        cor: 'roxo',
+        foto: '' // caminho para a foto
     }
 ];
 
-// Dados das consultas
 let consultas = [
     { 
         id: 1, 
@@ -94,7 +97,6 @@ let consultas = [
     }
 ];
 
-// Variáveis de controle
 let consultasSelecionadas = [];
 let selecionarTodas = false;
 let profissionalSelecionado = { nome: '', especialidade: '' };
@@ -105,7 +107,7 @@ let filtroEspecialidade = '';
 let filtroDisponibilidade = '';
 let profissionaisFiltrados = [...profissionais];
 
-// Função para renderizar profissionais
+
 function renderizarProfissionais() {
     const container = document.getElementById('containerProfissionais');
     const nenhumProfissional = document.getElementById('nenhumProfissional');
@@ -126,13 +128,21 @@ function renderizarProfissionais() {
                          profissional.cor === 'verde' ? 'imagem-profissional-verde' : 
                          'imagem-profissional-roxo';
         
+        // Verifica se tem foto ou usa ícone
+        const conteudoImagem = profissional.foto ? 
+            `<img src="${profissional.foto}" alt="${profissional.nome}" class="foto-profissional" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+             <div class="placeholder-profissional" style="display: none;">
+                 <i class="fas fa-user-md"></i>
+             </div>` :
+            `<div class="placeholder-profissional">
+                 <i class="fas fa-user-md"></i>
+             </div>`;
+        
         html += `
             <div class="col-md-6 col-lg-4">
                 <div class="card-profissional">
                     <div class="imagem-profissional ${corClasse}">
-                        <div class="placeholder-profissional">
-                            <i class="fas fa-user-md"></i>
-                        </div>
+                        ${conteudoImagem}
                         <div class="avaliacao">
                             <i class="fas fa-star"></i>${profissional.avaliacao}
                         </div>
@@ -158,7 +168,6 @@ function renderizarProfissionais() {
     container.innerHTML = html;
 }
 
-// Função para aplicar filtros
 function aplicarFiltros() {
     profissionaisFiltrados = profissionais.filter(profissional => {
         const passaEspecialidade = !filtroEspecialidade || profissional.especialidade === filtroEspecialidade;
@@ -176,7 +185,6 @@ function aplicarFiltros() {
     renderizarProfissionais();
 }
 
-// Função para limpar filtros
 function limparFiltros() {
     filtroEspecialidade = '';
     filtroDisponibilidade = '';
@@ -185,7 +193,6 @@ function limparFiltros() {
     aplicarFiltros();
 }
 
-// Função para abrir modal de agendamento
 function abrirModalAgendamento(profissional, especialidade) {
     profissionalSelecionado = { nome: profissional, especialidade: especialidade };
     document.getElementById('nomeProfissionalModal').textContent = profissional;
@@ -195,7 +202,6 @@ function abrirModalAgendamento(profissional, especialidade) {
     modal.show();
 }
 
-// Função para confirmar agendamento
 function confirmarAgendamento() {
     // Pegar o tipo de consulta selecionado no modal
     const selectTipoConsulta = document.getElementById('tipoConsulta');
@@ -228,7 +234,6 @@ function confirmarAgendamento() {
     mostrarNotificacao('Consulta agendada com sucesso!', 'success');
 }
 
-// Função para mostrar notificação
 function mostrarNotificacao(mensagem, tipo) {
     const toast = document.createElement('div');
     toast.className = `alert alert-${tipo === 'success' ? 'success' : 'danger'} position-fixed`;
@@ -242,13 +247,11 @@ function mostrarNotificacao(mensagem, tipo) {
     }, 3000);
 }
 
-// Função para formatar data
 function formatarData(data) {
     const date = new Date(data);
     return date.toLocaleDateString('pt-BR');
 }
 
-// Função para renderizar consultas
 function renderizarConsultas() {
     const corpoTabela = document.getElementById('corpoTabelaConsultas');
     const containerConsultas = document.getElementById('container-consultas');
@@ -278,7 +281,7 @@ function renderizarConsultas() {
                 <td>
                     <div>
                         <div class="fw-semibold text-dark">${consulta.profissional}</div>
-                        <div class="small text-danger">${consulta.especialidade}</div>
+                        <div class="small text-primary">${consulta.especialidade}</div>
                         <div class="small text-muted">${consulta.tipo}</div>
                     </div>
                 </td>
@@ -314,7 +317,6 @@ function renderizarConsultas() {
     atualizarCheckboxSelecionarTodas();
 }
 
-// Função para excluir consulta
 function excluirConsulta(id) {
     consultas = consultas.filter(consulta => consulta.id !== id);
     consultasSelecionadas = consultasSelecionadas.filter(consultaId => consultaId !== id);
@@ -322,7 +324,6 @@ function excluirConsulta(id) {
     mostrarNotificacao('Consulta cancelada com sucesso!', 'success');
 }
 
-// Função para excluir consultas selecionadas
 function excluirConsultasSelecionadas() {
     if (consultasSelecionadas.length === 0) {
         mostrarNotificacao('Nenhuma consulta selecionada!', 'error');
@@ -337,7 +338,6 @@ function excluirConsultasSelecionadas() {
     mostrarNotificacao(`${contador} consulta(s) cancelada(s) com sucesso!`, 'success');
 }
 
-// Função para manipular mudança de checkbox
 function manipularMudancaCheckbox(id) {
     if (consultasSelecionadas.includes(id)) {
         consultasSelecionadas = consultasSelecionadas.filter(consultaId => consultaId !== id);
@@ -347,7 +347,6 @@ function manipularMudancaCheckbox(id) {
     atualizarCheckboxSelecionarTodas();
 }
 
-// Função para manipular selecionar todas
 function manipularSelecionarTodas() {
     const checkboxSelecionarTodas = document.getElementById('selecionarTodas');
     selecionarTodas = checkboxSelecionarTodas.checked;
@@ -363,7 +362,6 @@ function manipularSelecionarTodas() {
     });
 }
 
-// Função para atualizar checkbox selecionar todas
 function atualizarCheckboxSelecionarTodas() {
     const checkboxSelecionarTodas = document.getElementById('selecionarTodas');
     selecionarTodas = consultasSelecionadas.length === consultas.length && consultas.length > 0;
@@ -372,7 +370,7 @@ function atualizarCheckboxSelecionarTodas() {
 
 // Event Listeners
 document.addEventListener('DOMContentLoaded', function() {
-    // Renderizar componentes iniciais
+
     renderizarConsultas();
     renderizarProfissionais();
     
