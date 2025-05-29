@@ -13,8 +13,8 @@ const profissionais = [
     {
         id: 2,
         nome: 'Dr. Carlos Santos',
-        especialidade: 'Fisioterapia',
-        experiencia: '5 anos de experiência',
+        especialidade: 'Psiquiatra',
+        experiencia: '12 anos de experiência',
         avaliacao: 4.9,
         disponibilidade: 'Amanhã',
         disponibilidadeTipo: 'amanha',
@@ -23,54 +23,55 @@ const profissionais = [
     },
     {
         id: 3,
-        nome: 'Dra. Maria Silva',
-        especialidade: 'Nutrição',
-        experiencia: '6 anos de experiência',
-        avaliacao: 4.8,
+        nome: 'Dra. Mariana Costa',
+        especialidade: 'Terapeuta',
+        experiencia: '10 anos de experiência',
+        avaliacao: 4.7,
         disponibilidade: 'Esta Semana',
         disponibilidadeTipo: 'semana',
         cor: 'roxo',
-        foto: '/images/Volunteers/Psicóloga_ Dra.Maria Silva.jpg'
+        foto: '/img-medicos/3.png'
     },
     {
         id: 4,
-        nome: 'Dr. Roberto Lima',
+        nome: 'Dr. Pedro Oliveira',
         especialidade: 'Psicologia',
-        experiencia: '10 anos de experiência',
+        experiencia: '8 anos de experiência',
         avaliacao: 4.9,
         disponibilidade: 'Hoje',
         disponibilidadeTipo: 'hoje',
         cor: 'azul',
-        foto: '' // caminho para a foto
+        foto: '/img-medicos/4.png'
     },
     {
         id: 5,
-        nome: 'Dra. Patricia Costa',
-        especialidade: 'Fisioterapia',
-        experiencia: '7 anos de experiência',
-        avaliacao: 4.6,
+        nome: 'Dra. Juliana Lima',
+        especialidade: 'Psiquiatra',
+        experiencia: '11 anos de experiência',
+        avaliacao: 4.8,
         disponibilidade: 'Esta Semana',
         disponibilidadeTipo: 'semana',
         cor: 'verde',
-        foto: '' // caminho para a foto
+        foto: '/img-medicos/6.png'
     },
     {
         id: 6,
-        nome: 'Dr. Fernando Alves',
-        especialidade: 'Nutrição',
-        experiencia: '4 anos de experiência',
-        avaliacao: 4.5,
+        nome: 'Dr. Rafael Souza',
+        especialidade: 'Terapeuta',
+        experiencia: '9 anos de experiência',
+        avaliacao: 4.7,
         disponibilidade: 'Amanhã',
         disponibilidadeTipo: 'amanha',
         cor: 'roxo',
-        foto: '' // caminho para a foto
+        foto: '/img-medicos/5.png'
     }
 ];
 
+// Corrigindo as consultas para corresponder aos profissionais
 let consultas = [
     { 
         id: 1, 
-        profissional: 'Dra. Ana Martins', 
+        profissional: 'Dra. Ana Silva', 
         especialidade: 'Psicologia', 
         data: '2025-05-12', 
         horario: '14:00', 
@@ -80,7 +81,7 @@ let consultas = [
     { 
         id: 2, 
         profissional: 'Dr. Carlos Santos', 
-        especialidade: 'Fisioterapia', 
+        especialidade: 'Psiquiatra', 
         data: '2025-05-15', 
         horario: '10:30', 
         tipo: 'Presencial', 
@@ -88,8 +89,8 @@ let consultas = [
     },
     { 
         id: 3, 
-        profissional: 'Dra. Maria Silva', 
-        especialidade: 'Nutrição', 
+        profissional: 'Dra. Mariana Costa', 
+        especialidade: 'Terapeuta', 
         data: '2025-05-18', 
         horario: '09:00', 
         tipo: 'Online', 
@@ -98,153 +99,81 @@ let consultas = [
 ];
 
 let consultasSelecionadas = [];
-let selecionarTodas = false;
 let profissionalSelecionado = { nome: '', especialidade: '' };
 let dataSelecionada = '12';
 let horarioSelecionado = '14:00';
-let tipoConsultaSelecionado = 'online';
-let filtroEspecialidade = '';
-let filtroDisponibilidade = '';
-let profissionaisFiltrados = [...profissionais];
-
 
 function renderizarProfissionais() {
     const container = document.getElementById('containerProfissionais');
     const nenhumProfissional = document.getElementById('nenhumProfissional');
     
-    if (profissionaisFiltrados.length === 0) {
-        container.style.display = 'none';
-        nenhumProfissional.style.display = 'block';
-        return;
-    }
+    // Aplicar filtros
+    const filtroEspec = document.getElementById('filtroEspecialidade').value;
+    const filtroDisp = document.getElementById('filtroDisponibilidade').value;
     
-    container.style.display = 'flex';
-    nenhumProfissional.style.display = 'none';
-    
-    let html = '';
-    
-    profissionaisFiltrados.forEach(profissional => {
-        const corClasse = profissional.cor === 'azul' ? '' : 
-                         profissional.cor === 'verde' ? 'imagem-profissional-verde' : 
-                         'imagem-profissional-roxo';
-        
-        // Verifica se tem foto ou usa ícone
-        const conteudoImagem = profissional.foto ? 
-            `<img src="${profissional.foto}" alt="${profissional.nome}" class="foto-profissional" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-             <div class="placeholder-profissional" style="display: none;">
-                 <i class="fas fa-user-md"></i>
-             </div>` :
-            `<div class="placeholder-profissional">
-                 <i class="fas fa-user-md"></i>
-             </div>`;
-        
-        html += `
-            <div class="col-md-6 col-lg-4">
-                <div class="card-profissional">
-                    <div class="imagem-profissional ${corClasse}">
-                        ${conteudoImagem}
-                        <div class="avaliacao">
-                            <i class="fas fa-star"></i>${profissional.avaliacao}
-                        </div>
-                    </div>
-                    <div class="informacoes-profissional">
-                        <h4 class="fw-bold mb-1">${profissional.nome}</h4>
-                        <p class="especialidade mb-3">${profissional.especialidade}</p>
-                        <p class="experiencia mb-3">
-                            <i class="fas fa-briefcase me-2"></i>${profissional.experiencia}
-                        </p>
-                        <div class="proxima-disponibilidade mb-4">
-                            <i class="far fa-clock me-2"></i>Próx. disponível: ${profissional.disponibilidade}
-                        </div>
-                        <button class="botao-agendar" onclick="abrirModalAgendamento('${profissional.nome}', '${profissional.especialidade}')">
-                            Marcar
-                        </button>
-                    </div>
-                </div>
-            </div>
-        `;
-    });
-    
-    container.innerHTML = html;
-}
-
-function aplicarFiltros() {
-    profissionaisFiltrados = profissionais.filter(profissional => {
-        const passaEspecialidade = !filtroEspecialidade || profissional.especialidade === filtroEspecialidade;
+    const profissionaisFiltrados = profissionais.filter(profissional => {
+        const passaEspecialidade = !filtroEspec || profissional.especialidade === filtroEspec;
         
         let passaDisponibilidade = true;
-        if (filtroDisponibilidade === 'hoje') {
+        if (filtroDisp === 'hoje') {
             passaDisponibilidade = profissional.disponibilidadeTipo === 'hoje';
-        } else if (filtroDisponibilidade === 'semana') {
+        } else if (filtroDisp === 'semana') {
             passaDisponibilidade = ['hoje', 'amanha', 'semana'].includes(profissional.disponibilidadeTipo);
         }
         
         return passaEspecialidade && passaDisponibilidade;
     });
     
-    renderizarProfissionais();
-}
-
-function limparFiltros() {
-    filtroEspecialidade = '';
-    filtroDisponibilidade = '';
-    document.getElementById('filtroEspecialidade').value = '';
-    document.getElementById('filtroDisponibilidade').value = '';
-    aplicarFiltros();
-}
-
-function abrirModalAgendamento(profissional, especialidade) {
-    profissionalSelecionado = { nome: profissional, especialidade: especialidade };
-    document.getElementById('nomeProfissionalModal').textContent = profissional;
-    document.getElementById('especialidadeProfissionalModal').textContent = especialidade;
+    if (profissionaisFiltrados.length === 0) {
+        container.classList.add('hidden');
+        nenhumProfissional.classList.remove('hidden');
+        return;
+    }
     
-    const modal = new bootstrap.Modal(document.getElementById('modalAgendamento'));
-    modal.show();
-}
-
-function confirmarAgendamento() {
-    // Pegar o tipo de consulta selecionado no modal
-    const selectTipoConsulta = document.getElementById('tipoConsulta');
-    const tipoConsultaTexto = selectTipoConsulta.value === 'online' ? 'Online' : 'Presencial';
+    container.classList.remove('hidden');
+    nenhumProfissional.classList.add('hidden');
     
-    const novaConsulta = {
-        id: Date.now(), 
-        profissional: profissionalSelecionado.nome,
-        especialidade: profissionalSelecionado.especialidade,
-        data: '2025-05-25',
-        horario: horarioSelecionado,
-        tipo: tipoConsultaTexto,
-        status: 'Agendada'
-    };
-
-    consultas.push(novaConsulta);
-    renderizarConsultas();
+    let html = '';
     
-    const modalAgendamento = bootstrap.Modal.getInstance(document.getElementById('modalAgendamento'));
-    modalAgendamento.hide();
+    profissionaisFiltrados.forEach(profissional => {
+        const corClasse = profissional.cor === 'verde' ? 'imagem-verde' : 
+                         profissional.cor === 'roxo' ? 'imagem-roxo' : 'imagem-azul';
+        
+        html += `
+            <div class="card-profissional bg-white rounded-xl shadow-lg overflow-hidden">
+                <div class="h-48 ${corClasse} flex items-center justify-center relative">
+                    ${profissional.foto ? 
+                        `<img src="${profissional.foto}" alt="${profissional.nome}" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                         <div class="text-white text-6xl hidden">
+                             <i class="fas fa-user-md"></i>
+                         </div>` :
+                        `<div class="text-white text-6xl">
+                             <i class="fas fa-user-md"></i>
+                         </div>`
+                    }
+                    <div class="absolute bottom-3 right-3 bg-white text-blue-500 px-3 py-1 rounded-full text-sm font-semibold">
+                        ★ ${profissional.avaliacao}
+                    </div>
+                </div>
+                
+                <div class="p-6">
+                    <h4 class="text-xl font-bold mb-1">${profissional.nome}</h4>
+                    <p class="text-blue-500 font-semibold text-sm mb-3">${profissional.especialidade}</p>
+                    <p class="text-gray-600 text-sm mb-3">
+                        <i class="fas fa-briefcase mr-2"></i>${profissional.experiencia}
+                    </p>
+                    <div class="bg-blue-50 text-blue-600 px-3 py-2 rounded-lg text-sm mb-4 inline-block">
+                        <i class="fas fa-clock mr-2"></i>Próx. disponível: ${profissional.disponibilidade}
+                    </div>
+                    <button onclick="abrirModalAgendamento('${profissional.nome}', '${profissional.especialidade}')" class="w-full bg-blue-500 text-white py-2 px-4 rounded-lg font-semibold hover:bg-blue-600 transition-colors">
+                        Marcar
+                    </button>
+                </div>
+            </div>
+        `;
+    });
     
-    document.getElementById('nomeProfissionalConfirmacao').textContent = profissionalSelecionado.nome;
-    document.getElementById('dataConfirmacao').textContent = dataSelecionada;
-    document.getElementById('horarioConfirmacao').textContent = horarioSelecionado;
-    document.getElementById('tipoConsultaConfirmacao').textContent = tipoConsultaTexto;
-    
-    const modalConfirmacao = new bootstrap.Modal(document.getElementById('modalConfirmacao'));
-    modalConfirmacao.show();
-    
-    mostrarNotificacao('Consulta agendada com sucesso!', 'success');
-}
-
-function mostrarNotificacao(mensagem, tipo) {
-    const toast = document.createElement('div');
-    toast.className = `alert alert-${tipo === 'success' ? 'success' : 'danger'} position-fixed`;
-    toast.style.cssText = 'top: 20px; right: 20px; z-index: 9999; min-width: 300px;';
-    toast.textContent = mensagem;
-    
-    document.body.appendChild(toast);
-    
-    setTimeout(() => {
-        toast.remove();
-    }, 3000);
+    container.innerHTML = html;
 }
 
 function formatarData(data) {
@@ -258,54 +187,51 @@ function renderizarConsultas() {
     const nenhumaConsulta = document.getElementById('nenhumaConsulta');
     
     if (consultas.length === 0) {
-        containerConsultas.style.display = 'none';
-        nenhumaConsulta.style.display = 'block';
+        containerConsultas.classList.add('hidden');
+        nenhumaConsulta.classList.remove('hidden');
         return;
     }
     
-    containerConsultas.style.display = 'block';
-    nenhumaConsulta.style.display = 'none';
+    containerConsultas.classList.remove('hidden');
+    nenhumaConsulta.classList.add('hidden');
     
     let html = '';
     
     consultas.forEach(consulta => {
-        const classeStatus = consulta.status === 'Confirmado' ? 'status-confirmado' : 'status-agendada';
+        const classeStatus = consulta.status === 'Confirmado' ? 
+            'bg-blue-100 text-blue-800' : 'bg-yellow-100 text-yellow-800';
         
         html += `
-            <tr>
-                <td>
-                    <input type="checkbox" 
-                           class="form-check-input checkbox-consulta" 
-                           data-id="${consulta.id}">
+            <tr class="border-b border-gray-100 hover:bg-gray-50">
+                <td class="py-4 px-4">
+                    <input type="checkbox" class="checkbox-consulta" data-id="${consulta.id}">
                 </td>
-                <td>
+                <td class="py-4 px-4">
                     <div>
-                        <div class="fw-semibold text-dark">${consulta.profissional}</div>
-                        <div class="small text-primary">${consulta.especialidade}</div>
-                        <div class="small text-muted">${consulta.tipo}</div>
+                        <div class="font-semibold text-gray-800">${consulta.profissional}</div>
+                        <div class="text-sm text-blue-500">${consulta.especialidade}</div>
+                        <div class="text-sm text-gray-500">${consulta.tipo}</div>
                     </div>
                 </td>
-                <td>
-                    <div class="small">
-                        <div class="d-flex align-items-center mb-1">
-                            <i class="far fa-calendar text-muted me-2"></i>
+                <td class="py-4 px-4">
+                    <div class="text-sm">
+                        <div class="flex items-center mb-1">
+                            <i class="fas fa-calendar text-gray-400 mr-2"></i>
                             ${formatarData(consulta.data)}
                         </div>
-                        <div class="d-flex align-items-center">
-                            <i class="far fa-clock text-muted me-2"></i>
+                        <div class="flex items-center">
+                            <i class="fas fa-clock text-gray-400 mr-2"></i>
                             ${consulta.horario}
                         </div>
                     </div>
                 </td>
-                <td>
-                    <span class="badge-status ${classeStatus}">
+                <td class="py-4 px-4">
+                    <span class="px-3 py-1 rounded-full text-xs font-semibold ${classeStatus}">
                         ${consulta.status}
                     </span>
                 </td>
-                <td>
-                    <button class="botao-cancelar" 
-                            onclick="excluirConsulta(${consulta.id})" 
-                            title="Cancelar consulta">
+                <td class="py-4 px-4">
+                    <button onclick="excluirConsulta(${consulta.id})" class="p-2 text-red-500 hover:bg-red-50 rounded-lg transition-colors" title="Cancelar consulta">
                         <i class="fas fa-trash"></i>
                     </button>
                 </td>
@@ -314,113 +240,137 @@ function renderizarConsultas() {
     });
     
     corpoTabela.innerHTML = html;
-    atualizarCheckboxSelecionarTodas();
+}
+
+function abrirModalAgendamento(nome, especialidade) {
+    profissionalSelecionado = { nome, especialidade };
+    document.getElementById('nomeProfissionalModal').textContent = nome;
+    document.getElementById('especialidadeProfissionalModal').textContent = especialidade;
+    document.getElementById('modalAgendamento').classList.add('show');
+}
+
+function fecharModalAgendamento() {
+    document.getElementById('modalAgendamento').classList.remove('show');
+}
+
+function confirmarAgendamento() {
+    const tipoConsulta = document.getElementById('tipoConsulta').value;
+    
+    const novaConsulta = {
+        id: Date.now(),
+        profissional: profissionalSelecionado.nome,
+        especialidade: profissionalSelecionado.especialidade,
+        data: '2025-05-25',
+        horario: horarioSelecionado,
+        tipo: tipoConsulta,
+        status: 'Agendada'
+    };
+
+    consultas.push(novaConsulta);
+    renderizarConsultas();
+    
+    fecharModalAgendamento();
+    
+    document.getElementById('nomeProfissionalConfirmacao').textContent = profissionalSelecionado.nome;
+    document.getElementById('dataConfirmacao').textContent = dataSelecionada;
+    document.getElementById('horarioConfirmacao').textContent = horarioSelecionado;
+    document.getElementById('tipoConsultaConfirmacao').textContent = tipoConsulta;
+    
+    document.getElementById('modalConfirmacao').classList.add('show');
+}
+
+function fecharModalConfirmacao() {
+    document.getElementById('modalConfirmacao').classList.remove('show');
 }
 
 function excluirConsulta(id) {
     consultas = consultas.filter(consulta => consulta.id !== id);
     consultasSelecionadas = consultasSelecionadas.filter(consultaId => consultaId !== id);
     renderizarConsultas();
-    mostrarNotificacao('Consulta cancelada com sucesso!', 'success');
 }
 
 function excluirConsultasSelecionadas() {
     if (consultasSelecionadas.length === 0) {
-        mostrarNotificacao('Nenhuma consulta selecionada!', 'error');
+        alert('Nenhuma consulta selecionada!');
         return;
     }
     
-    const contador = consultasSelecionadas.length;
     consultas = consultas.filter(consulta => !consultasSelecionadas.includes(consulta.id));
     consultasSelecionadas = [];
-    selecionarTodas = false;
     renderizarConsultas();
-    mostrarNotificacao(`${contador} consulta(s) cancelada(s) com sucesso!`, 'success');
+    document.getElementById('selecionarTodas').checked = false;
 }
 
-function manipularMudancaCheckbox(id) {
-    if (consultasSelecionadas.includes(id)) {
-        consultasSelecionadas = consultasSelecionadas.filter(consultaId => consultaId !== id);
-    } else {
-        consultasSelecionadas.push(id);
-    }
-    atualizarCheckboxSelecionarTodas();
-}
-
-function manipularSelecionarTodas() {
-    const checkboxSelecionarTodas = document.getElementById('selecionarTodas');
-    selecionarTodas = checkboxSelecionarTodas.checked;
-    
-    if (selecionarTodas) {
-        consultasSelecionadas = consultas.map(consulta => consulta.id);
-    } else {
-        consultasSelecionadas = [];
-    }
-    
-    document.querySelectorAll('.checkbox-consulta').forEach(checkbox => {
-        checkbox.checked = selecionarTodas;
-    });
-}
-
-function atualizarCheckboxSelecionarTodas() {
-    const checkboxSelecionarTodas = document.getElementById('selecionarTodas');
-    selecionarTodas = consultasSelecionadas.length === consultas.length && consultas.length > 0;
-    checkboxSelecionarTodas.checked = selecionarTodas;
+function limparFiltros() {
+    document.getElementById('filtroEspecialidade').value = '';
+    document.getElementById('filtroDisponibilidade').value = '';
+    renderizarProfissionais();
 }
 
 // Event Listeners
 document.addEventListener('DOMContentLoaded', function() {
-
     renderizarConsultas();
     renderizarProfissionais();
     
-    // Event listeners para filtros
-    document.getElementById('filtroEspecialidade').addEventListener('change', function(e) {
-        filtroEspecialidade = e.target.value;
-        aplicarFiltros();
-    });
-    
-    document.getElementById('filtroDisponibilidade').addEventListener('change', function(e) {
-        filtroDisponibilidade = e.target.value;
-        aplicarFiltros();
-    });
-    
+    // Filtros
+    document.getElementById('filtroEspecialidade').addEventListener('change', renderizarProfissionais);
+    document.getElementById('filtroDisponibilidade').addEventListener('change', renderizarProfissionais);
     document.getElementById('limparFiltros').addEventListener('click', limparFiltros);
     
-    // Event listeners para consultas
-    document.getElementById('selecionarTodas').addEventListener('change', manipularSelecionarTodas);
-    document.getElementById('excluirSelecionadas').addEventListener('click', excluirConsultasSelecionadas);
-    
-    document.getElementById('corpoTabelaConsultas').addEventListener('change', function(e) {
-        if (e.target.classList.contains('checkbox-consulta')) {
-            manipularMudancaCheckbox(parseInt(e.target.dataset.id));
+    // Consultas
+    document.getElementById('selecionarTodas').addEventListener('change', function() {
+        const checkboxes = document.querySelectorAll('.checkbox-consulta');
+        consultasSelecionadas = [];
+        
+        if (this.checked) {
+            checkboxes.forEach(checkbox => {
+                checkbox.checked = true;
+                consultasSelecionadas.push(parseInt(checkbox.dataset.id));
+            });
+        } else {
+            checkboxes.forEach(checkbox => checkbox.checked = false);
         }
     });
     
-    // Event listeners para modal
-    document.querySelectorAll('.opcao-data').forEach(opcao => {
-        opcao.addEventListener('click', function() {
+    document.getElementById('excluirSelecionadas').addEventListener('click', excluirConsultasSelecionadas);
+    
+    document.addEventListener('change', function(e) {
+        if (e.target.classList.contains('checkbox-consulta')) {
+            const id = parseInt(e.target.dataset.id);
+            if (e.target.checked) {
+                if (!consultasSelecionadas.includes(id)) {
+                    consultasSelecionadas.push(id);
+                }
+            } else {
+                consultasSelecionadas = consultasSelecionadas.filter(consultaId => consultaId !== id);
+            }
+            
+            // Atualizar checkbox "selecionar todas"
+            const allCheckboxes = document.querySelectorAll('.checkbox-consulta');
+            const checkedCheckboxes = document.querySelectorAll('.checkbox-consulta:checked');
+            document.getElementById('selecionarTodas').checked = allCheckboxes.length === checkedCheckboxes.length && allCheckboxes.length > 0;
+        }
+    });
+    
+    // Modal - Seleção de data
+    document.addEventListener('click', function(e) {
+        if (e.target.closest('.opcao-data')) {
             document.querySelectorAll('.opcao-data').forEach(opt => opt.classList.remove('selected'));
-            this.classList.add('selected');
-            dataSelecionada = this.dataset.data;
-        });
-    });
-    
-    document.querySelectorAll('.opcao-horario').forEach(opcao => {
-        opcao.addEventListener('click', function() {
+            e.target.closest('.opcao-data').classList.add('selected');
+            dataSelecionada = e.target.closest('.opcao-data').dataset.data;
+        }
+        
+        if (e.target.closest('.opcao-horario')) {
             document.querySelectorAll('.opcao-horario').forEach(opt => opt.classList.remove('selected'));
-            this.classList.add('selected');
-            horarioSelecionado = this.dataset.horario;
-        });
+            e.target.closest('.opcao-horario').classList.add('selected');
+            horarioSelecionado = e.target.closest('.opcao-horario').dataset.horario;
+        }
     });
     
-    // Event listener para tipo de consulta
-    document.getElementById('tipoConsulta').addEventListener('change', function(e) {
-        tipoConsultaSelecionado = e.target.value;
+    // Fechar modal clicando fora
+    document.addEventListener('click', function(e) {
+        if (e.target.classList.contains('modal')) {
+            e.target.classList.remove('show');
+        }
     });
 });
-
-// Expor funções globalmente para onclick
-window.abrirModalAgendamento = abrirModalAgendamento;
-window.confirmarAgendamento = confirmarAgendamento;
-window.excluirConsulta = excluirConsulta;
